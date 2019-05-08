@@ -1,5 +1,16 @@
-# wordpress-ultimate-setup
+<!--ts-->
+   * [wordpress-ultimate-setup](#wordpress-ultimate-setup)
+   * [Installation](#installation)
+      * [Open LiteSpeed](#open-litespeed)
+         * [Quick Commands](#quick-commands)
+      * [Percona DB](#percona-db)
+      * [XDebug](#xdebug)
+   * [Notes](#notes)
+      * [Caching](#caching)
 
+<!-- Added by: jtrask, at: Wed  8 May 2019 12:33:15 PDT -->
+
+<!--te-->
 # Installation
 ## Open LiteSpeed
 1. Download the repository enable script from Litespeed
@@ -51,7 +62,6 @@ xdebug.dump_globals=on
 xdebug.collect_vars=on
 xdebug.show_local_vars=on
 xdebug.show_error_trace=on
-xdebug.show_exception_trace=on
 ```
 
 # Notes
