@@ -1,6 +1,15 @@
 # wordpress-ultimate-setup
 
 # Installation
+## Open LiteSpeed
+1. Download the repository enable script from Litespeed
+### Quick Commands
+```
+wget -O - http://rpms.litespeedtech.com/debian/enable_lst_debain_repo.sh | bash
+apt install openlitespeed lsphp72 lsphp72-curl lsphp72-imap lsphp72-mysql lsphp72-intl lsphp72-pgsql lsphp72-sqlite3 lsphp72-tidy lsphp72-snmp
+```
+## Percona DB
+
 ## XDebug
 This works for not only OpenLitespeed but also LiteSpeed, and is for Ubuntu 18
 
@@ -41,5 +50,16 @@ xdebug.collect_params=4
 xdebug.dump_globals=on
 xdebug.collect_vars=on
 xdebug.show_local_vars=on
-xdebug.show_error_trace
+xdebug.show_error_trace=on
+xdebug.show_exception_trace=on
 ```
+
+# Notes
+## Caching
+1. Litespeed
+-https://www.litespeedtech.com/support/wiki/doku.php/litespeed_wiki:cache:drop_query_string
+-https://www.litespeedtech.com/support/wiki/doku.php/litespeed_wiki:cache:advanced?redirect=1
+-https://www.litespeedtech.com/support/wiki/doku.php/litespeed_wiki:cache:avoid-network-bottleneck-even-cache-enabled
+-https://www.litespeedtech.com/support/wiki/doku.php/litespeed_wiki:cache:common_installation:advanced
+-https://www.litespeedtech.com/support/wiki/doku.php/litespeed_wiki:cache
+-https://www.litespeedtech.com/support/wiki/doku.php/litespeed_wiki:php:improve-performance
