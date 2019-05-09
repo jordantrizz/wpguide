@@ -19,7 +19,18 @@
 wget -O - http://rpms.litespeedtech.com/debian/enable_lst_debain_repo.sh | bash
 apt install openlitespeed lsphp72 lsphp72-curl lsphp72-imap lsphp72-mysql lsphp72-intl lsphp72-pgsql lsphp72-sqlite3 lsphp72-tidy lsphp72-snmp
 ```
+
+## Vanish
+https://www.linode.com/docs/websites/varnish/use-varnish-and-nginx-to-serve-wordpress-over-ssl-and-http-on-debian-8/
 ## Percona DB
+
+## Redis
+
+1. Resources
+    - https://github.com/pressjitsu/pj-object-cache-red
+    - https://pressjitsu.com/blog/redis-object-cache-wordpress/
+2. Monitoring
+    - redis-cli monitor
 
 ## XDebug
 This works for not only OpenLitespeed but also LiteSpeed, and is for Ubuntu 18
@@ -65,6 +76,20 @@ xdebug.show_error_trace=on
 ```
 
 # Notes
+## Load Testing
+https://locust.io/
+
+## Google PageSpeed Module
+https://www.wpoven.com/tutorial/how-to-setup-modpagespeed-with-nginx-varnish-and-php-fpm/
+https://www.litespeedtech.com/support/wiki/doku.php/litespeed_wiki:config:enable_pagespeed#set_server_level_pagespeed_file_path
+```
+# currently standby, for testing.
+pagespeed standby;
+pagespeed ModifyCachingHeaders on;
+pagespeed FileCachePath /tmp/lshttpd/pagespeed;
+pagespeed EnableFilters rewrite_css,combine_css,trim_urls;
+pagespeed DisableFilters sprite_images,convert_jpeg_to_webp,convert_to_webp_lossless;
+```
 ## Caching
 1. Litespeed
 -https://www.litespeedtech.com/support/wiki/doku.php/litespeed_wiki:cache:drop_query_string
@@ -73,3 +98,38 @@ xdebug.show_error_trace=on
 -https://www.litespeedtech.com/support/wiki/doku.php/litespeed_wiki:cache:common_installation:advanced
 -https://www.litespeedtech.com/support/wiki/doku.php/litespeed_wiki:cache
 -https://www.litespeedtech.com/support/wiki/doku.php/litespeed_wiki:php:improve-performance
+
+## Wordpress Constants
+CONCATENATE_SCRIPTS	undefined
+COMPRESS_SCRIPTS	undefined
+COMPRESS_CSS	undefined
+WP_LOCAL_DEV	undefined
+
+### CONCATENATE_SCRIPTS
+Not used due to a DoS attack? https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-6389
+#### Mitigation 
+1. Apache/Litespeed - https://www.netsted.co.za/a-simple-solution-to-wordpress-dos-vulnerability-cve-2018-6389/
+```
+RewriteCond %{HTTP_REFERER} !yourdomain\.co\.za [NC]
+RewriteCond %{THE_REQUEST} \.php[\ /?].*HTTP/ [NC]
+RewriteRule ^wp-admin/load-scripts\.php$ – [R=403,L]
+```
+2. NGiNX - https://bjornjohansen.no/load-scripts-php
+```
+limit_req_zone $binary_remote_addr zone=php:10m rate=1r/s;
+
+server {
+  […]
+    location ~ .php$ {
+      limit_req zone=php burst=10 nodelay;
+      […]
+    }
+}
+```
+
+# Interesting Reads
+- https://cachewall.com/
+- https://wordpress.org/plugins/pj-page-cache-red/
+- https://nginxconfig.io/?https&wordpress&file_structure=modularized
+- https://www.modpagespeed.com/doc/configuration
+- https://www.modpagespeed.com/doc/configuration
