@@ -1,26 +1,68 @@
 <!--ts-->
-   * [wordpress-ultimate-setup](#wordpress-ultimate-setup)
-   * [Installation](#installation)
+   * [Ultimate Wordpress Setup](#ultimate-wordpress-setup)
+   * [LiteSpeed](#litespeed)
       * [Open LiteSpeed](#open-litespeed)
-         * [Quick Commands](#quick-commands)
+         * [Quick Install Commands](#quick-install-commands)
+      * [LiteSpeed Paid](#litespeed-paid)
+         * [Quick Install Commands](#quick-install-commands-1)
+         * [LSPHP](#lsphp)
+      * [LetsEncrypt SSL](#letsencrypt-ssl)
+         * [Quick Install](#quick-install)
+      * [Vanish](#vanish)
       * [Percona DB](#percona-db)
+      * [Redis](#redis)
       * [XDebug](#xdebug)
-   * [Notes](#notes)
+      * [New Relic for LiteSpeed/OpenLitespeed](#new-relic-for-litespeedopenlitespeed)
+         * [Multiple Sites with New Relic](#multiple-sites-with-new-relic)
+         * [New Relic Daemon Setup](#new-relic-daemon-setup)
+      * [GIT Tracking](#git-tracking)
+         * [Remove Sensitive Authentication from GIT Tracking](#remove-sensitive-authentication-from-git-tracking)
+         * [Wordpress .gitignore](#wordpress-gitignore)
+      * [Content Delivery Network (CDN)](#content-delivery-network-cdn)
+      * [Wordpress Tweaks](#wordpress-tweaks)
+         * [Transients](#transients)
+         * [Disable Cron](#disable-cron)
+         * [System Fonts versus Web Fonts](#system-fonts-versus-web-fonts)
+         * [Move to GeneratePress Theme](#move-to-generatepress-theme)
+         * [DNS Pre-Fetching](#dns-pre-fetching)
+         * [Force SSL for Wordpress Admin](#force-ssl-for-wordpress-admin)
+         * [Force SSL for all content (Don't use a Plugin](#force-ssl-for-all-content-dont-use-a-plugin)
+      * [Load Testing](#load-testing)
+      * [Google PageSpeed Module](#google-pagespeed-module)
+      * [PHP](#php)
+         * [OPCode Caching](#opcode-caching)
       * [Caching](#caching)
+         * [Litespeed](#litespeed-1)
+         * [LSCMD](#lscmd)
+            * [Quick Install](#quick-install-1)
+      * [Wordpress Constants](#wordpress-constants)
+         * [CONCATENATE_SCRIPTS](#concatenate_scripts)
+            * [Mitigation](#mitigation)
+   * [Interesting Reads](#interesting-reads)
 
-<!-- Added by: jtrask, at: Wed  8 May 2019 12:33:15 PDT -->
+<!-- Added by: jtrask, at: Fri 24 May 2019 15:08:36 PDT -->
 
 <!--te-->
-# Installation
+# Ultimate Wordpress Setup
+I've created this guide based on my own experiences and research. If you have any questions, please email me directly or create an issue.
+# LiteSpeed
+I've chosen LiteSpeed due to two simple facts. It has a memory based caching system, and provides the fastest PHP implementation to date.
 ## Open LiteSpeed
-1. Download the repository enable script from Litespeed
-### Quick Commands
+I haven't had a chance to document this process.....
+### Quick Install Commands
 ```
 wget -O - http://rpms.litespeedtech.com/debian/enable_lst_debain_repo.sh | bash
 apt install openlitespeed lsphp72 lsphp72-curl lsphp72-imap lsphp72-mysql lsphp72-intl lsphp72-pgsql lsphp72-sqlite3 lsphp72-tidy lsphp72-snmp
 ```
 ## LiteSpeed Paid
+You can get a free license from LiteSpeed for a single site and CPU. It includes the LiteSpeed Cache plugin for Wordpress.
+### Quick Install Commands
+You'll get an email after payment with a single line command to install LiteSpeed Web Server
+```
+bash <( curl https://get.litespeed.sh ) (litespeedlicensekey)
+```
 ### LSPHP
+LSPHP isn't provided by default so you'll need to install that as well.
 ```
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 011AA62DEDA1F085
 wget -O - http://rpms.litespeedtech.com/debian/enable_lst_debain_repo.sh | bash
@@ -100,19 +142,81 @@ PHP_INI_SCAN_DIR=$VH_ROOT/mods-available/
 ```
 Then copy all of your $SERVER_ROOT/mods-available files to $VH_ROOT/mods-available and then update $VH_ROOT/mods-available/newrelic.ini app name. This is a means of having per site/user PHP configuration.
 
-##Content Delivery Network (CDN)
+### New Relic Daemon Setup
+By default, new relic will spawn the newrelic-daemon process under the PHP user. You can change this by doing the following.
+```
+cp /etc/newrelic/newrelic.cfg.template /etc/newrelic/newrelic.cfg
+systemctl enable newrelic-daemon
+systemctl start newrelic-daemon
+```
+## GIT Tracking
+You can skip this if you don't care about changes you're making to your site.
+
+We can use GIT to track some of the changes made to a sites wp-config.php or .htaccess incase you nuke the site.
+
+### Remove Sensitive Authentication from GIT Tracking
+ I like tracking wp-config.php, but it contains sensitive authentication informationr. You'll need to do a little chopping up of the wp-config.php and split out the sensitive information into another file and remove it from wp-config.php
+
+I suggest that you copy your wp-config.php outside of your document root and then remove everything except for the WordPress Database settings, WordPress keys and the WordPress table prefix. Here's an example
+
+```
+<?php
+define('DB_NAME', 'Your_DB'); // name of database
+define('DB_USER', 'DB_User'); // MySQL user
+define('DB_PASSWORD', 'DB_pass'); // and password
+define('DB_HOST', 'localhost'); // MySQL host
+ 
+define('AUTH_KEY',         'Your_key_here');
+define('SECURE_AUTH_KEY',  'Your_key_here');
+define('LOGGED_IN_KEY',    'Your_key_here');
+define('NONCE_KEY',        'Your_key_here');
+define('AUTH_SALT',        'Your_key_here');
+define('SECURE_AUTH_SALT', 'Your_key_here');
+define('LOGGED_IN_SALT',   'Your_key_here');
+define('NONCE_SALT',       'Your_key_here');
+ 
+$table_prefix  = 'wp_'; // only numbers, letters and underscore
+?>
+```
+You'll then need to remove the above CONSTANTS from your wp-config.php within your document root and add the following line.
+```
+include("/home/user/wp-config.php")
+```
+The above line requires your home directory path, which you can find pretty easily.
+
+### Wordpress .gitignore
+Create a file named .gitignore and add the following.
+```
+# Ignore Everything
+/*
+
+# Let's track some things.
+!.htaccess
+!wp-config.php
+```
+This is good to start, eventually we will want to track more.
+## Content Delivery Network (CDN)
 - https://www.keycdn.com/pricing
 - https://stackpath.com/
     - Ensure "CORS Header Support" is not checked off or you'll have multiple access-control-allow-origin
-## Wordpress
+## Wordpress Tweaks
 ### Transients
 - https://pressjitsu.com/blog/optimizing-wp-options-for-speed/
 - https://github.com/pressjitsu/wp-transients-cleaner/blob/master/transient-cleaner.php
-
 ### Disable Cron
 - https://pressjitsu.com/blog/wordpress-cron-cli/
-
-# Notes
+### System Fonts versus Web Fonts
+- https://perfmatters.io/wordpress-performance-optimization/
+- https://woorkup.com/system-font/
+### Move to GeneratePress Theme
+- https://generatepress.com
+### DNS Pre-Fetching
+- https://perfmatters.io/docs/dns-prefetching/
+I'll be including this in a plugin shortly.
+### Force SSL for Wordpress Admin
+Add the following to wp-config.php
+```define('FORCE_SSL_ADMIN', true);```
+### Force SSL for all content (Don't use a Plugin
 ## Load Testing
 https://locust.io/
 
@@ -185,6 +289,7 @@ server {
 ```
 
 # Interesting Reads
+- WordPress Visual Code Extensions - https://visualstudiomagazine.com/articles/2018/01/24/wordpress-extensions.aspx
 - https://cachewall.com/
 - https://wordpress.org/plugins/pj-page-cache-red/
 - https://nginxconfig.io/?https&wordpress&file_structure=modularized
