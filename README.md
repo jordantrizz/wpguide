@@ -1,5 +1,27 @@
+# Ultimate WordPress Deployment Guide
+This guide provides the fastest WordPress instance available for use on a full operating system, it's based on Ubuntu 18. You can use some of the information within this guide for managed WordPress Hosting. However, you should contact your provider before proceeding with any changes contained in this guide.
+
+I've created this guide based on my own experiences and research. If you have any questions, please email me directly or create a github issue.
+I'm also on Gitter [![Gitter](https://badges.gitter.im/jordantrizz/community.svg)](https://gitter.im/jordantrizz/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge) if I don't respond, then email me and I'll hop on.
+
+## Sponsors
+This guide is sponsored by the following organizations.
+
+- This guide is sponsored by [LMT Solutions] (https://lmt.ca)
+
+## Cautionary Disclaimer
+<aside class="warning">
+This is an on-going document, there are incomplete sections. Use at your own risk.
+</aside>
+- This guide is a work in progress.
+- There are no guarantees.
+- I'm not responsible for data loss or service interruptions.
+- This is an unbiased guide, it's for pure speed and functionality.
+
+# Table of Contents
+
 <!--ts-->
-   * [Ultimate Wordpress Setup](#ultimate-wordpress-setup)
+   * [Ultimate WordPress Setup](#ultimate-WordPress-setup)
    * [LiteSpeed](#litespeed)
       * [Open LiteSpeed](#open-litespeed)
          * [Quick Install Commands](#quick-install-commands)
@@ -17,15 +39,15 @@
          * [New Relic Daemon Setup](#new-relic-daemon-setup)
       * [GIT Tracking](#git-tracking)
          * [Remove Sensitive Authentication from GIT Tracking](#remove-sensitive-authentication-from-git-tracking)
-         * [Wordpress .gitignore](#wordpress-gitignore)
+         * [WordPress .gitignore](#WordPress-gitignore)
       * [Content Delivery Network (CDN)](#content-delivery-network-cdn)
-      * [Wordpress Tweaks](#wordpress-tweaks)
+      * [WordPress Tweaks](#WordPress-tweaks)
          * [Transients](#transients)
          * [Disable Cron](#disable-cron)
          * [System Fonts versus Web Fonts](#system-fonts-versus-web-fonts)
          * [Move to GeneratePress Theme](#move-to-generatepress-theme)
          * [DNS Pre-Fetching](#dns-pre-fetching)
-         * [Force SSL for Wordpress Admin](#force-ssl-for-wordpress-admin)
+         * [Force SSL for WordPress Admin](#force-ssl-for-WordPress-admin)
          * [Force SSL for all content (Don't use a Plugin](#force-ssl-for-all-content-dont-use-a-plugin)
       * [Load Testing](#load-testing)
       * [Google PageSpeed Module](#google-pagespeed-module)
@@ -35,7 +57,7 @@
          * [Litespeed](#litespeed-1)
          * [LSCMD](#lscmd)
             * [Quick Install](#quick-install-1)
-      * [Wordpress Constants](#wordpress-constants)
+      * [WordPress Constants](#WordPress-constants)
          * [CONCATENATE_SCRIPTS](#concatenate_scripts)
             * [Mitigation](#mitigation)
    * [Interesting Reads](#interesting-reads)
@@ -43,25 +65,37 @@
 <!-- Added by: jtrask, at: Fri 24 May 2019 15:08:36 PDT -->
 
 <!--te-->
-# Ultimate Wordpress Setup
-I've created this guide based on my own experiences and research. If you have any questions, please email me directly or create an issue.
-# LiteSpeed
+
+# Infrastructure Technology
+When deciding on infrastructure to run WordPress on, I wanted to make sure functionality came first and speed was second. Here is a breakdown of all the required pieces to run a WordPress instance.
+| Level | Technology | Reason |
+| --- | --- | --- |
+OS | Ubuntu 18 | explanation later.
+DNS | CloudFlare | Free and easy to use.
+Web Server | LiteSpeed | Currently provides the most functionality HTTP2/QUIC, etc.
+Front-End Cache | LiteSpeed | Still need to test Varnish.
+WP Caching Plugin | LiteSpeed | Provided for free and works with LiteSpeed's Front End cache. Also has all required caching options as WP Rocket, W3TC, etc.
+CDN | StackPath | Currently provides the easiest means to deploy. LiteSpeeds Caching plugin provides the means to deploy this CDN.
+PHP | LSAPI | LiteSpeed Server Application Programming Interface, Currently the fastest implementation of PHP.
+DB | Percona XtraDB seems to be far supierior than MariaDB, even though its available within MariaDB. I'm biased here.
+Monitoring | New Relic | Free and simple.
+
+## LiteSpeed
 I've chosen LiteSpeed due to two simple facts. It has a memory based caching system, and provides the fastest PHP implementation to date.
-## Open LiteSpeed
-I haven't had a chance to document this process.....
-### Quick Install Commands
+### Open LiteSpeed
+This needs more documentation.
 ```
 wget -O - http://rpms.litespeedtech.com/debian/enable_lst_debain_repo.sh | bash
 apt install openlitespeed lsphp72 lsphp72-curl lsphp72-imap lsphp72-mysql lsphp72-intl lsphp72-pgsql lsphp72-sqlite3 lsphp72-tidy lsphp72-snmp
 ```
-## LiteSpeed Paid
-You can get a free license from LiteSpeed for a single site and CPU. It includes the LiteSpeed Cache plugin for Wordpress.
-### Quick Install Commands
-You'll get an email after payment with a single line command to install LiteSpeed Web Server
+### LiteSpeed Paid
+You can get a free license from LiteSpeed for a single domain, 1CPU and 2GB of memory. If you go over any of the resources, LiteSpeed won't start. The LiteSpeed Cache plugin for WordPress is included with the free license.
+
+Once you've ordered a licenses, install instructions will following via email with a one-liner command to install using your new license key.
 ```
 bash <( curl https://get.litespeed.sh ) (litespeedlicensekey)
 ```
-### LSPHP
+#### LSPHP
 LSPHP isn't provided by default so you'll need to install that as well.
 ```
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 011AA62DEDA1F085
@@ -75,14 +109,18 @@ add-apt-repository ppa:certbot/certbot
 apt-get install certbot
 ```
 ## Vanish
-https://www.linode.com/docs/websites/varnish/use-varnish-and-nginx-to-serve-wordpress-over-ssl-and-http-on-debian-8/
+Need's more documentation, if we go with LiteSpeed we can use this guide to proxy SSL requests to Varnish.
+
+However further tests need to be completed to see the speed differences between LiteSpeed Cache and Varnish.
+
+- https://www.linode.com/docs/websites/varnish/use-varnish-and-nginx-to-serve-WordPress-over-ssl-and-http-on-debian-8/
 ## Percona DB
 
 ## Redis
 
 1. Resources
     - https://github.com/pressjitsu/pj-object-cache-red
-    - https://pressjitsu.com/blog/redis-object-cache-wordpress/
+    - https://pressjitsu.com/blog/redis-object-cache-WordPress/
 2. Monitoring
     - redis-cli monitor
     - https://www.serverdensity.com/pricing/
@@ -184,7 +222,7 @@ include("/home/user/wp-config.php")
 ```
 The above line requires your home directory path, which you can find pretty easily.
 
-### Wordpress .gitignore
+### WordPress .gitignore
 Create a file named .gitignore and add the following.
 ```
 # Ignore Everything
@@ -199,21 +237,21 @@ This is good to start, eventually we will want to track more.
 - https://www.keycdn.com/pricing
 - https://stackpath.com/
     - Ensure "CORS Header Support" is not checked off or you'll have multiple access-control-allow-origin
-## Wordpress Tweaks
+## WordPress Tweaks
 ### Transients
 - https://pressjitsu.com/blog/optimizing-wp-options-for-speed/
 - https://github.com/pressjitsu/wp-transients-cleaner/blob/master/transient-cleaner.php
 ### Disable Cron
-- https://pressjitsu.com/blog/wordpress-cron-cli/
+- https://pressjitsu.com/blog/WordPress-cron-cli/
 ### System Fonts versus Web Fonts
-- https://perfmatters.io/wordpress-performance-optimization/
+- https://perfmatters.io/WordPress-performance-optimization/
 - https://woorkup.com/system-font/
 ### Move to GeneratePress Theme
 - https://generatepress.com
 ### DNS Pre-Fetching
 - https://perfmatters.io/docs/dns-prefetching/
 I'll be including this in a plugin shortly.
-### Force SSL for Wordpress Admin
+### Force SSL for WordPress Admin
 Add the following to wp-config.php
 ```define('FORCE_SSL_ADMIN', true);```
 ### Force SSL for all content (Don't use a Plugin)
@@ -229,8 +267,8 @@ Add the following to wp-config.php
     RewriteRule . /index.php [L]
 </IfModule>
 ```
-### Secure Wordpress Passwords
-- https://roots.io/improving-wordpress-password-security/
+### Secure WordPress Passwords
+- https://roots.io/improving-WordPress-password-security/
 
 ## Image Optimization
 - https://piio.co/
@@ -278,16 +316,24 @@ systemctl stop lsmcd
 systemctl enable lsmcd
 systemctl disable lsmcd
 ```
-## Wordpress Constants
+## WordPress Constants
+| Constant | Description  |
+|---|---|
+| CONCATENATE_SCRIPTS | 
+- Will essentially concatenate all 
+- Not used due to a DoS attack? https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-6389 |
+|   |   |
+|   |   |
 CONCATENATE_SCRIPTS	undefined
 COMPRESS_SCRIPTS	undefined
 COMPRESS_CSS	undefined
 WP_LOCAL_DEV	undefined
+define( 'WP_POST_REVISIONS', 5 );
 
 ### CONCATENATE_SCRIPTS
 Not used due to a DoS attack? https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-6389
 #### Mitigation 
-1. Apache/Litespeed - https://www.netsted.co.za/a-simple-solution-to-wordpress-dos-vulnerability-cve-2018-6389/
+1. Apache/Litespeed - https://www.netsted.co.za/a-simple-solution-to-WordPress-dos-vulnerability-cve-2018-6389/
 ```
 RewriteCond %{HTTP_REFERER} !yourdomain\.co\.za [NC]
 RewriteCond %{THE_REQUEST} \.php[\ /?].*HTTP/ [NC]
@@ -307,10 +353,10 @@ server {
 ```
 
 # Interesting Reads
-- WordPress Visual Code Extensions - https://visualstudiomagazine.com/articles/2018/01/24/wordpress-extensions.aspx
+- WordPress Visual Code Extensions - https://visualstudiomagazine.com/articles/2018/01/24/WordPress-extensions.aspx
 - https://cachewall.com/
-- https://wordpress.org/plugins/pj-page-cache-red/
-- https://nginxconfig.io/?https&wordpress&file_structure=modularized
+- https://WordPress.org/plugins/pj-page-cache-red/
+- https://nginxconfig.io/?https&WordPress&file_structure=modularized
 - https://www.modpagespeed.com/doc/configuration
 - https://www.modpagespeed.com/doc/configuration
 - https://github.com/phpmetrics/PhpMetrics
