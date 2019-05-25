@@ -7,7 +7,7 @@ I'm also on Gitter [![Gitter](https://badges.gitter.im/jordantrizz/community.svg
 ## Sponsors
 This guide is sponsored by the following organizations.
 
-- This guide is sponsored by [LMT Solutions] (https://lmt.ca)
+- This guide is sponsored by [LMT Solutions](https://lmt.ca)
 
 ## Cautionary Disclaimer
 <aside class="warning">
@@ -317,18 +317,18 @@ systemctl enable lsmcd
 systemctl disable lsmcd
 ```
 ## WordPress Constants
+To be placed into `wp-config.php` and defined as `define('WP_POST_REVISIONS',5);`
 | Constant | Description  |
 |---|---|
-| CONCATENATE_SCRIPTS | 
-- Will essentially concatenate all 
-- Not used due to a DoS attack? https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-6389 |
-|   |   |
-|   |   |
-CONCATENATE_SCRIPTS	undefined
-COMPRESS_SCRIPTS	undefined
-COMPRESS_CSS	undefined
-WP_LOCAL_DEV	undefined
-define( 'WP_POST_REVISIONS', 5 );
+| CONCATENATE_SCRIPTS | Will essentially concatenate all scripts, <br> Not used due to a DoS attack? https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-6389 |
+|  COMPRESS_SCRIPTS||
+|  COMPRESS_CSS||
+| WP_LOCAL_DEV|
+| WP_POST_REVISIONS|Will setup the number of post revisions available. |
+| CONCATENATE_SCRIPTS||
+| COMPRESS_SCRIPTS||
+| COMPRESS_CSS||
+| WP_LOCAL_DEV||
 
 ### CONCATENATE_SCRIPTS
 Not used due to a DoS attack? https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-6389
