@@ -18,6 +18,9 @@ This is an on-going document, there are incomplete sections. Use at your own ris
 - I'm not responsible for data loss or service interruptions.
 - This is an unbiased guide, it's for pure speed and functionality.
 
+# TODO
+- Review https://gomakethings.com/high-performance-wordpress/
+
 # Table of Contents
 
 <!--ts-->
@@ -188,15 +191,12 @@ systemctl enable newrelic-daemon
 systemctl start newrelic-daemon
 ```
 ## GIT Tracking
-You can skip this if you don't care about changes you're making to your site.
-
-We can use GIT to track some of the changes made to a sites wp-config.php or .htaccess incase you nuke the site.
+You can skip this if you don't care about changes you're making to your site. We can use GIT to track some of the changes made to a sites wp-config.php or .htaccess incase you nuke the site.
 
 ### Remove Sensitive Authentication from GIT Tracking
- I like tracking wp-config.php, but it contains sensitive authentication informationr. You'll need to do a little chopping up of the wp-config.php and split out the sensitive information into another file and remove it from wp-config.php
+ I like tracking `wp-config.php`, but it contains sensitive authentication informationr. You'll need to do a little chopping up of the `wp-config.php` and split out the sensitive information into another file and remove it from `wp-config.php`
 
-I suggest that you copy your wp-config.php outside of your document root and then remove everything except for the WordPress Database settings, WordPress keys and the WordPress table prefix. Here's an example
-
+I suggest that you copy your `wp-config.php` outside of your document root and then remove everything except for the WordPress Database settings, WordPress keys and the WordPress table prefix. Here's an example
 ```
 <?php
 define('DB_NAME', 'Your_DB'); // name of database
@@ -223,7 +223,7 @@ include("/home/user/wp-config.php")
 The above line requires your home directory path, which you can find pretty easily.
 
 ### WordPress .gitignore
-Create a file named .gitignore and add the following.
+Create a file named .gitignore in your document root and add the following.  
 ```
 # Ignore Everything
 /*
@@ -232,7 +232,10 @@ Create a file named .gitignore and add the following.
 !.htaccess
 !wp-config.php
 ```
-This is good to start, eventually we will want to track more.
+I use the above, and will expand on it. 
+
+You can use this one as an example, however it's more for theme development. Still a good resource.
+- https://salferrarello.com/wordpress-gitignore/
 ## Content Delivery Network (CDN)
 - https://www.keycdn.com/pricing
 - https://stackpath.com/
