@@ -216,7 +216,25 @@ I'll be including this in a plugin shortly.
 ### Force SSL for Wordpress Admin
 Add the following to wp-config.php
 ```define('FORCE_SSL_ADMIN', true);```
-### Force SSL for all content (Don't use a Plugin
+### Force SSL for all content (Don't use a Plugin)
+```
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{SERVER_PORT} !^443$
+    RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+    RewriteBase /
+    RewriteRule ^index\.php$ - [L]
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule . /index.php [L]
+</IfModule>
+```
+### Secure Wordpress Passwords
+- https://roots.io/improving-wordpress-password-security/
+
+## Image Optimization
+- https://piio.co/
+- https://imagekit.io/
 ## Load Testing
 https://locust.io/
 
@@ -295,5 +313,6 @@ server {
 - https://nginxconfig.io/?https&wordpress&file_structure=modularized
 - https://www.modpagespeed.com/doc/configuration
 - https://www.modpagespeed.com/doc/configuration
-
-
+- https://github.com/phpmetrics/PhpMetrics
+- https://wpackagist.org/
+- https://roots.io/trellis/
