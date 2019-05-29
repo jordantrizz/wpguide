@@ -75,6 +75,7 @@ This is an on-going document, there are incomplete sections. Use at your own ris
 
 # Infrastructure Technology
 When deciding on infrastructure to run WordPress on, I wanted to make sure functionality came first and speed was second. Here is a breakdown of all the required pieces to run a WordPress instance.
+
 | Level | Technology | Reason |
 | --- | --- | --- |
 OS | Ubuntu 18 | explanation later.
@@ -352,6 +353,7 @@ systemctl disable lsmcd
 ```
 ## WordPress Constants
 To be placed into `wp-config.php` and defined as `define('WP_POST_REVISIONS',5);`
+
 | Constant | Description  |
 |---|---|
 | CONCATENATE_SCRIPTS | Will essentially concatenate all scripts, <br> Not used due to a DoS attack? https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-6389 |
