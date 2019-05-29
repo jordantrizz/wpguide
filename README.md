@@ -18,19 +18,18 @@ This is an on-going document, there are incomplete sections. Use at your own ris
 - I'm not responsible for data loss or service interruptions.
 - This is an unbiased guide, it's for pure speed and functionality.
 
-# TODO
-- Review https://gomakethings.com/high-performance-wordpress/
-
 # Table of Contents
 
 <!--ts-->
-   * [Ultimate WordPress Setup](#ultimate-WordPress-setup)
-   * [LiteSpeed](#litespeed)
-      * [Open LiteSpeed](#open-litespeed)
-         * [Quick Install Commands](#quick-install-commands)
-      * [LiteSpeed Paid](#litespeed-paid)
-         * [Quick Install Commands](#quick-install-commands-1)
-         * [LSPHP](#lsphp)
+   * [Ultimate WordPress Deployment Guide](#ultimate-wordpress-deployment-guide)
+      * [Sponsors](#sponsors)
+      * [Cautionary Disclaimer](#cautionary-disclaimer)
+   * [Table of Contents](#table-of-contents)
+   * [Infrastructure Technology](#infrastructure-technology)
+      * [LiteSpeed](#litespeed)
+         * [Open LiteSpeed](#open-litespeed)
+         * [LiteSpeed Paid](#litespeed-paid)
+            * [LSPHP](#lsphp)
       * [LetsEncrypt SSL](#letsencrypt-ssl)
          * [Quick Install](#quick-install)
       * [Vanish](#vanish)
@@ -42,16 +41,21 @@ This is an on-going document, there are incomplete sections. Use at your own ris
          * [New Relic Daemon Setup](#new-relic-daemon-setup)
       * [GIT Tracking](#git-tracking)
          * [Remove Sensitive Authentication from GIT Tracking](#remove-sensitive-authentication-from-git-tracking)
-         * [WordPress .gitignore](#WordPress-gitignore)
+         * [WordPress .gitignore](#wordpress-gitignore)
       * [Content Delivery Network (CDN)](#content-delivery-network-cdn)
-      * [WordPress Tweaks](#WordPress-tweaks)
+         * [Solutions](#solutions)
+         * [CloudFlare](#cloudflare)
+            * [Default CloudFlare Rules for Wordpress](#default-cloudflare-rules-for-wordpress)
+      * [WordPress Tweaks](#wordpress-tweaks)
          * [Transients](#transients)
          * [Disable Cron](#disable-cron)
          * [System Fonts versus Web Fonts](#system-fonts-versus-web-fonts)
          * [Move to GeneratePress Theme](#move-to-generatepress-theme)
          * [DNS Pre-Fetching](#dns-pre-fetching)
-         * [Force SSL for WordPress Admin](#force-ssl-for-WordPress-admin)
-         * [Force SSL for all content (Don't use a Plugin](#force-ssl-for-all-content-dont-use-a-plugin)
+         * [Force SSL for WordPress Admin](#force-ssl-for-wordpress-admin)
+         * [Force SSL for all content (Don't use a Plugin)](#force-ssl-for-all-content-dont-use-a-plugin)
+         * [Secure WordPress Passwords](#secure-wordpress-passwords)
+      * [Image Optimization](#image-optimization)
       * [Load Testing](#load-testing)
       * [Google PageSpeed Module](#google-pagespeed-module)
       * [PHP](#php)
@@ -60,12 +64,12 @@ This is an on-going document, there are incomplete sections. Use at your own ris
          * [Litespeed](#litespeed-1)
          * [LSCMD](#lscmd)
             * [Quick Install](#quick-install-1)
-      * [WordPress Constants](#WordPress-constants)
+      * [WordPress Constants](#wordpress-constants)
          * [CONCATENATE_SCRIPTS](#concatenate_scripts)
             * [Mitigation](#mitigation)
    * [Interesting Reads](#interesting-reads)
 
-<!-- Added by: jtrask, at: Fri 24 May 2019 15:08:36 PDT -->
+<!-- Added by: jtrask, at: Wed 29 May 2019 11:25:17 PDT -->
 
 <!--te-->
 
@@ -106,11 +110,15 @@ wget -O - http://rpms.litespeedtech.com/debian/enable_lst_debain_repo.sh | bash
 apt-get install lsphp73 lsphp73 lsphp73-opcache lsphp73-mysql lsphp73-memcached lsphp73-curl
 ```
 ## LetsEncrypt SSL
+LetsEncrypt is easy and works well.
 ### Quick Install
+This will generate your certificate, you'll need to configure it in LiteSpeed. I also suggest you setup a cron for automatic renewals.
 ```
 add-apt-repository ppa:certbot/certbot
 apt-get install certbot
+certbot certonly --webroot -w /home/domain/public_html -d domain.com -d www.domain.com
 ```
+
 ## Vanish
 Need's more documentation, if we go with LiteSpeed we can use this guide to proxy SSL requests to Varnish.
 
@@ -191,12 +199,15 @@ systemctl enable newrelic-daemon
 systemctl start newrelic-daemon
 ```
 ## GIT Tracking
-You can skip this if you don't care about changes you're making to your site. We can use GIT to track some of the changes made to a sites wp-config.php or .htaccess incase you nuke the site.
+You can skip this if you don't care about changes you're making to your site.
+
+We can use GIT to track some of the changes made to a sites wp-config.php or .htaccess incase you nuke the site.
 
 ### Remove Sensitive Authentication from GIT Tracking
- I like tracking `wp-config.php`, but it contains sensitive authentication informationr. You'll need to do a little chopping up of the `wp-config.php` and split out the sensitive information into another file and remove it from `wp-config.php`
+ I like tracking wp-config.php, but it contains sensitive authentication informationr. You'll need to do a little chopping up of the wp-config.php and split out the sensitive information into another file and remove it from wp-config.php
 
-I suggest that you copy your `wp-config.php` outside of your document root and then remove everything except for the WordPress Database settings, WordPress keys and the WordPress table prefix. Here's an example
+I suggest that you copy your wp-config.php outside of your document root and then remove everything except for the WordPress Database settings, WordPress keys and the WordPress table prefix. Here's an example
+
 ```
 <?php
 define('DB_NAME', 'Your_DB'); // name of database
@@ -223,7 +234,7 @@ include("/home/user/wp-config.php")
 The above line requires your home directory path, which you can find pretty easily.
 
 ### WordPress .gitignore
-Create a file named .gitignore in your document root and add the following.  
+Create a file named .gitignore and add the following.
 ```
 # Ignore Everything
 /*
@@ -232,14 +243,34 @@ Create a file named .gitignore in your document root and add the following.
 !.htaccess
 !wp-config.php
 ```
-I use the above, and will expand on it. 
-
-You can use this one as an example, however it's more for theme development. Still a good resource.
-- https://salferrarello.com/wordpress-gitignore/
+This is good to start, eventually we will want to track more.
 ## Content Delivery Network (CDN)
+### Solutions
 - https://www.keycdn.com/pricing
 - https://stackpath.com/
-    - Ensure "CORS Header Support" is not checked off or you'll have multiple access-control-allow-origin
+    - Ensure "CORS Header Support" is not checked off or you'll have multiple access-control-allow-origin, only do this if you're having issues.
+### CloudFlare
+<aside class="warning">
+Don't enable the same configuration option on CloudFlare as you have set on your Web Server or WordPress caching plugin as they will conflict.
+</aside>
+CloudFlare isn't really a CDN, it does more and includes WAF, AnyCast DNS, and Caching. If you do pay for any level of CloudFlare, take a look at this article for what options you should be setting.
+
+https://onlinemediamasters.com/cloudflare-settings-for-wordpress/
+
+#### Default CloudFlare Rules for Wordpress
+Theses are the default rules you should have.
+1. `\*.domain.com/*`
+   - Cache Level: Cache Everything
+2. `\*.domain.com/wp-content/uploads*`
+   - Browser Cache TTL: 4 days
+   - Cache Level: Bypass
+   - Edge Cache TTL: a month
+3. `\*.domain.com/wp-admin*`
+   - Browser Integrity Check: On
+   - Security Level: High
+   - Cache Level: Bypass
+   -   Disable Performance
+
 ## WordPress Tweaks
 ### Transients
 - https://pressjitsu.com/blog/optimizing-wp-options-for-speed/
@@ -355,7 +386,8 @@ server {
 }
 ```
 
-# Interesting Reads
+# Interesting Reads and Sources
+HeRe are all the websites I've found myself explaining some of the information above.
 - WordPress Visual Code Extensions - https://visualstudiomagazine.com/articles/2018/01/24/WordPress-extensions.aspx
 - https://cachewall.com/
 - https://WordPress.org/plugins/pj-page-cache-red/
