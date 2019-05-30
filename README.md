@@ -81,12 +81,23 @@ When deciding on infrastructure to run WordPress on, I wanted to make sure funct
 OS | Ubuntu 18 | explanation later.
 DNS | CloudFlare | Free and easy to use.
 Web Server | LiteSpeed | Currently provides the most functionality HTTP2/QUIC, etc.
+SSL | LetsEncrypt | Simple and Easy. Open to alternatives.
+PHP | LSAPI | LiteSpeed Server Application Programming Interface, Currently the fastest implementation of PHP.
 Front-End Cache | LiteSpeed | Still need to test Varnish.
 WP Caching Plugin | LiteSpeed | Provided for free and works with LiteSpeed's Front End cache. Also has all required caching options as WP Rocket, W3TC, etc.
 CDN | StackPath | Currently provides the easiest means to deploy. LiteSpeeds Caching plugin provides the means to deploy this CDN.
-PHP | LSAPI | LiteSpeed Server Application Programming Interface, Currently the fastest implementation of PHP.
+
 DB | Percona | XtraDB seems to be far supierior than MariaDB, even though its available within MariaDB. I'm biased here.
 Monitoring | New Relic | Free and simple.
+
+# Operating System
+Need to flesh this out with Operating System specifics.
+# DNS
+Need to flesh this out with DNS options.
+## CloudFlare
+# Web Server
+## NGiNX
+I think NGiNX has it's place, but unfortunately the paid version is insanely expensive, and is missing a big feature of being able to flush the entire fastcgi cache.
 
 ## LiteSpeed
 I've chosen LiteSpeed due to two simple facts. It has a memory based caching system, and provides the fastest PHP implementation to date.
@@ -103,13 +114,8 @@ Once you've ordered a licenses, install instructions will following via email wi
 ```
 bash <( curl https://get.litespeed.sh ) (litespeedlicensekey)
 ```
-#### LSPHP
-LSPHP isn't provided by default so you'll need to install that as well.
-```
-sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 011AA62DEDA1F085
-wget -O - http://rpms.litespeedtech.com/debian/enable_lst_debain_repo.sh | bash
-apt-get install lsphp73 lsphp73 lsphp73-opcache lsphp73-mysql lsphp73-memcached lsphp73-curl
-```
+# SSL
+Only provided Lets Encrypt
 ## LetsEncrypt SSL
 LetsEncrypt is easy and works well.
 ### Quick Install
@@ -120,7 +126,19 @@ apt-get install certbot
 certbot certonly --webroot -w /home/domain/public_html -d domain.com -d www.domain.com
 ```
 
-## Vanish
+#PHP
+Lots of folks enjoy PHP-FPM, however LSAPI seems to be a faster alternative.
+## LSPHP
+LSPHP isn't provided by default so you'll need to install that as well.
+```
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 011AA62DEDA1F085
+wget -O - http://rpms.litespeedtech.com/debian/enable_lst_debain_repo.sh | bash
+apt-get install lsphp73 lsphp73 lsphp73-opcache lsphp73-mysql lsphp73-memcached lsphp73-curl
+```
+# Front-End Cache
+## LiteSpeed
+Native to the LiteSpeed web server, there's also a WordPress plugin to control the cache. Provides ESI also.
+## Varnish
 Need's more documentation, if we go with LiteSpeed we can use this guide to proxy SSL requests to Varnish.
 
 However further tests need to be completed to see the speed differences between LiteSpeed Cache and Varnish.
@@ -272,39 +290,6 @@ Theses are the default rules you should have.
    - Cache Level: Bypass
    -   Disable Performance
 
-## WordPress Tweaks
-### Transients
-- https://pressjitsu.com/blog/optimizing-wp-options-for-speed/
-- https://github.com/pressjitsu/wp-transients-cleaner/blob/master/transient-cleaner.php
-### Disable Cron
-- https://pressjitsu.com/blog/WordPress-cron-cli/
-### System Fonts versus Web Fonts
-- https://perfmatters.io/WordPress-performance-optimization/
-- https://woorkup.com/system-font/
-### Move to GeneratePress Theme
-- https://generatepress.com
-### DNS Pre-Fetching
-- https://perfmatters.io/docs/dns-prefetching/
-I'll be including this in a plugin shortly.
-### Force SSL for WordPress Admin
-Add the following to wp-config.php
-```define('FORCE_SSL_ADMIN', true);```
-### Force SSL for all content (Don't use a Plugin)
-```
-<IfModule mod_rewrite.c>
-    RewriteEngine On
-    RewriteCond %{SERVER_PORT} !^443$
-    RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
-    RewriteBase /
-    RewriteRule ^index\.php$ - [L]
-    RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteRule . /index.php [L]
-</IfModule>
-```
-### Secure WordPress Passwords
-- https://roots.io/improving-WordPress-password-security/
-
 ## Image Optimization
 - https://piio.co/
 - https://imagekit.io/
@@ -351,6 +336,11 @@ systemctl stop lsmcd
 systemctl enable lsmcd
 systemctl disable lsmcd
 ```
+# WordPress
+<!-- Wordpress Start -->
+## WP-CLI
+### Useful packages
+- wp package install wp-cli/doctor-command --allow-root
 ## WordPress Constants
 To be placed into `wp-config.php` and defined as `define('WP_POST_REVISIONS',5);`
 
@@ -388,6 +378,40 @@ server {
 }
 ```
 
+## WordPress Tweaks
+### Transients
+- https://pressjitsu.com/blog/optimizing-wp-options-for-speed/
+- https://github.com/pressjitsu/wp-transients-cleaner/blob/master/transient-cleaner.php
+### Disable Cron
+- https://pressjitsu.com/blog/WordPress-cron-cli/
+### System Fonts versus Web Fonts
+- https://perfmatters.io/WordPress-performance-optimization/
+- https://woorkup.com/system-font/
+### Move to GeneratePress Theme
+- https://generatepress.com
+### DNS Pre-Fetching
+- https://perfmatters.io/docs/dns-prefetching/
+I'll be including this in a plugin shortly.
+### Force SSL for WordPress Admin
+Add the following to wp-config.php
+```define('FORCE_SSL_ADMIN', true);```
+### Force SSL for all content (Don't use a Plugin)
+```
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{SERVER_PORT} !^443$
+    RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+    RewriteBase /
+    RewriteRule ^index\.php$ - [L]
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule . /index.php [L]
+</IfModule>
+```
+### Secure WordPress Passwords
+- https://roots.io/improving-WordPress-password-security/
+
+<!-- Wordpress End -->
 # Interesting Reads and Sources
 HeRe are all the websites I've found myself explaining some of the information above.
 - WordPress Visual Code Extensions - https://visualstudiomagazine.com/articles/2018/01/24/WordPress-extensions.aspx
