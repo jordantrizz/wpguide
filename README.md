@@ -85,7 +85,7 @@ Front-End Cache | LiteSpeed | Still need to test Varnish.
 WP Caching Plugin | LiteSpeed | Provided for free and works with LiteSpeed's Front End cache. Also has all required caching options as WP Rocket, W3TC, etc.
 CDN | StackPath | Currently provides the easiest means to deploy. LiteSpeeds Caching plugin provides the means to deploy this CDN.
 PHP | LSAPI | LiteSpeed Server Application Programming Interface, Currently the fastest implementation of PHP.
-DB | Percona XtraDB seems to be far supierior than MariaDB, even though its available within MariaDB. I'm biased here.
+DB | Percona | XtraDB seems to be far supierior than MariaDB, even though its available within MariaDB. I'm biased here.
 Monitoring | New Relic | Free and simple.
 
 ## LiteSpeed
