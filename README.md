@@ -124,6 +124,20 @@ Once you've ordered a licenses, install instructions will following via email wi
 ```
 bash <( curl https://get.litespeed.sh ) (litespeedlicensekey)
 ```
+### LiteSpeed Reverse Proxy
+You might setup a reverse proxy at some point for specific reasons. And HTTP might not redirect with a .htaccess rule.
+
+This is due to the fact that the front-end server needs the redirect rule.
+```
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^www.domain.ca$
+RewriteRule (.*) http://domain.ca/$1 [R=301,L]
+RewriteCond %{SERVER_PORT} !^443$
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>
+```
+
 # SSL
 Only provided Lets Encrypt
 ## LetsEncrypt SSL
@@ -136,7 +150,7 @@ apt-get install certbot
 certbot certonly --webroot -w /home/domain/public_html -d domain.com -d www.domain.com
 ```
 
-#PHP
+# PHP
 Lots of folks enjoy PHP-FPM, however LSAPI seems to be a faster alternative.
 ## LSPHP
 LSPHP isn't provided by default so you'll need to install that as well.
@@ -144,6 +158,11 @@ LSPHP isn't provided by default so you'll need to install that as well.
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 011AA62DEDA1F085
 wget -O - http://rpms.litespeedtech.com/debian/enable_lst_debain_repo.sh | bash
 apt-get install lsphp73 lsphp73 lsphp73-opcache lsphp73-mysql lsphp73-memcached lsphp73-curl
+```
+## PHP Configuration
+## PHP Required Modules
+```
+php-curl
 ```
 # Front-End Cache
 ## LiteSpeed
