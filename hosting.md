@@ -17,7 +17,8 @@ This document is a means to remind myself of the hosting solutions available but
 
 <!--te-->
 
-# Dedicated Cloud/VPS
+# Dedicated Resources
+Recently only found this on Vultr, however it seems to out perform most providers. Dedicated resources if you need them.
 ## US
 Company | Description|
  --- | --- | --- |
@@ -35,8 +36,17 @@ Company | Description|
 | [UpCloud](https://upcloud.com/) | French only DC's |
 | [UpCloud] (scaleway.com) | Europe |
 
+# Control Panel and Stacks
+Company | Description|
+ --- | --- | --- |
+| [Cloudways](https://www.cloudways.com/en/pricing.php) | Provides a decent NGiNX/PHP-FPM/Varnish Stack, includes a caching plugin called Breeze.
+| [SpinupWP](https://spinupwp.com)| Control Panel that works with Digital Ocean and other VPS providers.
+| [GRIDPANE](https://gridpane.com/) | Control Panel that works with multiple providers.
+
 # To Review
 - vipsdime.com - Decent, don't know. USD.
+- frantech
+- nosupportlinux
 
 # Testing Method
 The testing method should ensure the following is completed.

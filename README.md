@@ -34,14 +34,17 @@ This is an on-going document, there are incomplete sections. Use at your own ris
       * [LiteSpeed](#litespeed)
          * [Open LiteSpeed](#open-litespeed)
          * [LiteSpeed Paid](#litespeed-paid)
+         * [LiteSpeed Reverse Proxy](#litespeed-reverse-proxy)
    * [SSL](#ssl)
       * [LetsEncrypt SSL](#letsencrypt-ssl)
          * [Quick Install](#quick-install)
+   * [PHP](#php)
       * [LSPHP](#lsphp)
+      * [PHP Configuration](#php-configuration)
+      * [PHP Required Modules](#php-required-modules)
    * [Front-End Cache](#front-end-cache)
       * [LiteSpeed](#litespeed-1)
       * [Varnish](#varnish)
-      * [Percona DB](#percona-db)
       * [Redis](#redis)
       * [XDebug](#xdebug)
       * [New Relic for LiteSpeed/OpenLitespeed](#new-relic-for-litespeedopenlitespeed)
@@ -50,14 +53,19 @@ This is an on-going document, there are incomplete sections. Use at your own ris
       * [GIT Tracking](#git-tracking)
          * [Remove Sensitive Authentication from GIT Tracking](#remove-sensitive-authentication-from-git-tracking)
          * [WordPress .gitignore](#wordpress-gitignore)
-      * [Content Delivery Network (CDN)](#content-delivery-network-cdn)
-         * [Solutions](#solutions)
-         * [CloudFlare](#cloudflare-1)
-            * [Default CloudFlare Rules for Wordpress](#default-cloudflare-rules-for-wordpress)
+   * [Content Delivery Network (CDN)](#content-delivery-network-cdn)
+      * [Solutions](#solutions)
+      * [CloudFlare](#cloudflare-1)
+         * [Default CloudFlare Rules for Wordpress](#default-cloudflare-rules-for-wordpress)
+   * [DB](#db)
+   * [Monitoring](#monitoring)
+      * [UptimeRobot](#uptimerobot)
+         * [UptimeRobot Bypass Cache](#uptimerobot-bypass-cache)
+   * [Optimization](#optimization)
       * [Image Optimization](#image-optimization)
       * [Load Testing](#load-testing)
       * [Google PageSpeed Module](#google-pagespeed-module)
-      * [PHP](#php)
+      * [PHP](#php-1)
          * [OPCode Caching](#opcode-caching)
       * [Caching](#caching)
          * [Litespeed](#litespeed-2)
@@ -80,7 +88,7 @@ This is an on-going document, there are incomplete sections. Use at your own ris
          * [Secure WordPress Passwords](#secure-wordpress-passwords)
    * [Interesting Reads and Sources](#interesting-reads-and-sources)
 
-<!-- Added by: jtrask, at: Thu 30 May 2019 13:10:28 PDT -->
+<!-- Added by: jtrask, at: Fri 14 Jun 2019 10:29:10 PDT -->
 
 <!--te-->
 
@@ -173,7 +181,6 @@ Need's more documentation, if we go with LiteSpeed we can use this guide to prox
 However further tests need to be completed to see the speed differences between LiteSpeed Cache and Varnish.
 
 - https://www.linode.com/docs/websites/varnish/use-varnish-and-nginx-to-serve-WordPress-over-ssl-and-http-on-debian-8/
-## Percona DB
 
 ## Redis
 
@@ -292,12 +299,12 @@ Create a file named .gitignore and add the following.
 !wp-config.php
 ```
 This is good to start, eventually we will want to track more.
-## Content Delivery Network (CDN)
-### Solutions
+# Content Delivery Network (CDN)
+## Solutions
 - https://www.keycdn.com/pricing
 - https://stackpath.com/
     - Ensure "CORS Header Support" is not checked off or you'll have multiple access-control-allow-origin, only do this if you're having issues.
-### CloudFlare
+## CloudFlare
 <aside class="warning">
 Don't enable the same configuration option on CloudFlare as you have set on your Web Server or WordPress caching plugin as they will conflict.
 </aside>
@@ -305,7 +312,7 @@ CloudFlare isn't really a CDN, it does more and includes WAF, AnyCast DNS, and C
 
 https://onlinemediamasters.com/cloudflare-settings-for-wordpress/
 
-#### Default CloudFlare Rules for Wordpress
+### Default CloudFlare Rules for Wordpress
 Theses are the default rules you should have.
 1. `\*.domain.com/*`
    - Cache Level: Cache Everything
@@ -318,6 +325,22 @@ Theses are the default rules you should have.
    - Security Level: High
    - Cache Level: Bypass
    -   Disable Performance
+
+# DB
+
+# Monitoring
+It's important to monitor your site. One important factor is to ensure that you're bypassing caches. Otherwise you won't know if youre site is down.
+## UptimeRobot
+Free, keyword checks and bypass cache.
+
+### UptimeRobot Bypass Cache
+Simple set the URL to the following.
+
+```https://mywebsitetomonitor.com/?*cachebuster*```
+
+As per https://blog.uptimerobot.com/cachebuster-a-pro-tip-for-bypassing-cache/
+
+# Optimization
 
 ## Image Optimization
 - https://piio.co/
