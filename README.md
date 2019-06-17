@@ -43,9 +43,10 @@ This is an on-going document, there are incomplete sections. Use at your own ris
       * [PHP Configuration](#php-configuration)
       * [PHP Required Modules](#php-required-modules)
    * [Front-End Cache](#front-end-cache)
-      * [LiteSpeed](#litespeed-1)
-      * [Varnish](#varnish)
-      * [Redis](#redis)
+      * [NGiNX Caching](#nginx-caching)
+      * [LiteSpeed Caching](#litespeed-caching)
+      * [Varnish Caching](#varnish-caching)
+      * [Redis Caching](#redis-caching)
       * [XDebug](#xdebug)
       * [New Relic for LiteSpeed/OpenLitespeed](#new-relic-for-litespeedopenlitespeed)
          * [Multiple Sites with New Relic](#multiple-sites-with-new-relic)
@@ -68,7 +69,7 @@ This is an on-going document, there are incomplete sections. Use at your own ris
       * [PHP](#php-1)
          * [OPCode Caching](#opcode-caching)
       * [Caching](#caching)
-         * [Litespeed](#litespeed-2)
+         * [Litespeed](#litespeed-1)
          * [LSCMD](#lscmd)
             * [Quick Install](#quick-install-1)
    * [WordPress](#wordpress)
@@ -88,7 +89,7 @@ This is an on-going document, there are incomplete sections. Use at your own ris
          * [Secure WordPress Passwords](#secure-wordpress-passwords)
    * [Interesting Reads and Sources](#interesting-reads-and-sources)
 
-<!-- Added by: jtrask, at: Fri 14 Jun 2019 10:29:10 PDT -->
+<!-- Added by: jtrask, at: Mon 17 Jun 2019 11:42:27 PDT -->
 
 <!--te-->
 
@@ -173,16 +174,19 @@ apt-get install lsphp73 lsphp73 lsphp73-opcache lsphp73-mysql lsphp73-memcached 
 php-curl
 ```
 # Front-End Cache
-## LiteSpeed
+## NGiNX Caching
+
+https://github.com/JeffCleverley/NginxFastCGICachePurger
+## LiteSpeed Caching
 Native to the LiteSpeed web server, there's also a WordPress plugin to control the cache. Provides ESI also.
-## Varnish
+## Varnish Caching
 Need's more documentation, if we go with LiteSpeed we can use this guide to proxy SSL requests to Varnish.
 
 However further tests need to be completed to see the speed differences between LiteSpeed Cache and Varnish.
 
 - https://www.linode.com/docs/websites/varnish/use-varnish-and-nginx-to-serve-WordPress-over-ssl-and-http-on-debian-8/
 
-## Redis
+## Redis Caching
 
 1. Resources
     - https://github.com/pressjitsu/pj-object-cache-red
