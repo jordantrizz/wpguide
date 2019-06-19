@@ -58,6 +58,7 @@ This is an on-going document, there are incomplete sections. Use at your own ris
       * [Solutions](#solutions)
       * [CloudFlare](#cloudflare-1)
          * [Default CloudFlare Rules for Wordpress](#default-cloudflare-rules-for-wordpress)
+         * [CloudFlare WordPress Admin Bar isssues](#cloudflare-wordpress-admin-bar-isssues)
    * [DB](#db)
    * [Monitoring](#monitoring)
       * [UptimeRobot](#uptimerobot)
@@ -89,7 +90,7 @@ This is an on-going document, there are incomplete sections. Use at your own ris
          * [Secure WordPress Passwords](#secure-wordpress-passwords)
    * [Interesting Reads and Sources](#interesting-reads-and-sources)
 
-<!-- Added by: jtrask, at: Mon 17 Jun 2019 11:42:27 PDT -->
+<!-- Added by: jtrask, at: Wed 19 Jun 2019 12:27:05 PDT -->
 
 <!--te-->
 
@@ -318,17 +319,32 @@ https://onlinemediamasters.com/cloudflare-settings-for-wordpress/
 
 ### Default CloudFlare Rules for Wordpress
 Theses are the default rules you should have.
+
 1. `\*.domain.com/*`
    - Cache Level: Cache Everything
 2. `\*.domain.com/wp-content/uploads*`
    - Browser Cache TTL: 4 days
-   - Cache Level: Bypass
+   - Cache Level: Cache Everything
    - Edge Cache TTL: a month
 3. `\*.domain.com/wp-admin*`
    - Browser Integrity Check: On
    - Security Level: High
    - Cache Level: Bypass
    -   Disable Performance
+
+NOTE: This will affect users who login to your site and process orders through plugins like WooCommerce.
+
+You should instead look at implementing the following as per CloudFlares documentation site.
+
+>By default, Cloudflare overrides the Cache-Control headers on cached content. However, you can set Cloudflare to "Respect Existing Headers" on cached content. When this setting is used, Cloudflare will not override Cache-Control headers from your origin.
+
+>Users on all plans can access this feature in the Caching tab in the dashboard by scrolling down to "Browser Cache Expiration".
+
+https://support.cloudflare.com/hc/en-us/articles/200172256-How-do-I-cache-static-HTML-
+
+### CloudFlare WordPress Admin Bar isssues
+
+https://www.thewebmaster.com/dev/2015/may/6/wordpress-admin-bar-shows-logged-out/
 
 # DB
 
