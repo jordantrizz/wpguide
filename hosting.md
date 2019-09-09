@@ -43,6 +43,18 @@ Company | Description|
 | [SpinupWP](https://spinupwp.com)| Control Panel that works with Digital Ocean and other VPS providers.
 | [GRIDPANE](https://gridpane.com/) | Control Panel that works with multiple providers.
 
+# Email Providers
+The following section was added because I feel it's helpful.
+
+<aside class="notice">The following links below may contain referral URL's and provide a kickback to myself.</aside>
+
+Company | Cost | Storage | Description|
+ --- | --- | --- |
+| [GSuite Basic](https://goo.gl/P1dcnY) | $6/m USD | 30GB | Email + Storage. 30GB shared.
+| [GSuite Business](https://goo.gl/P1dcnY) | $12/m USD | 1000GB | Basic + 1TB or unlimited storage after 5 users.
+| [GSuite Non-profit](https://support.google.com/nonprofits/answer/3367223?hl=en) | FREE | 30GB | GSuite Basic but free.
+| [Mail Cheap](https://www.mailcheap.co/client/aff.php?aff=51) | $2/m USD | Provides cheap enterprise email. 
+
 # To Review
 - vipsdime.com - Decent, don't know. USD.
 - frantech
