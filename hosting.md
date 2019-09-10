@@ -53,7 +53,9 @@ Company | Cost | Storage | Description|
 | [GSuite Basic](https://goo.gl/P1dcnY) | $6/m USD | 30GB | Email + Storage. 30GB shared.
 | [GSuite Business](https://goo.gl/P1dcnY) | $12/m USD | 1000GB | Basic + 1TB or unlimited storage after 5 users.
 | [GSuite Non-profit](https://support.google.com/nonprofits/answer/3367223?hl=en) | FREE | 30GB | GSuite Basic but free.
-| [Mail Cheap](https://www.mailcheap.co/client/aff.php?aff=51) | $2/m USD | Provides cheap enterprise email. 
+| [Mail Cheap](https://www.mailcheap.co/client/aff.php?aff=51) | $2/m USD | 10GB | Lots of options for email services, including dedicated servers.
+| [Zoho](https://www.zoho.com/mail/zohomail-pricing.html) | $1/m USD | 5GB | ?
+| [Rack Space](https://www.rackspace.com/email-hosting) | $2.99/m USD | 25GB | ?
 
 # To Review
 - vipsdime.com - Decent, don't know. USD.
