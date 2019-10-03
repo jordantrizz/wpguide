@@ -1,6 +1,8 @@
 # Hosting
 This document is a means to remind myself of the hosting solutions available but also pointing out their technical infrastructure, function and performance.
 
+This is a work in progress and I'd like to better be able to display information as well as sort it accurately. Open to suggestons.
+
 <!--ts-->
    * [Hosting](hosting.md#hosting)
    * [Dedicated Cloud/VPS](hosting.md#dedicated-cloudvps)
@@ -17,24 +19,39 @@ This document is a means to remind myself of the hosting solutions available but
 
 <!--te-->
 
-# Dedicated Resources
+# Dedicated Resources/Bare Metal
 Recently only found this on Vultr, however it seems to out perform most providers. Dedicated resources if you need them.
 ## US
 Company | Description|
  --- | --- | --- |
-| [Vultr](https://vultr.com/pricing/dedicated) | Dedicated resources, SSD, w
-# VPS
+| [Vultr](https://vultr.com/pricing/dedicated) | Dedicated resources, no over-comitted.
+
+# VPS/Cloud
+I'm grouping VPS/Cloud due to the fact they're basically the same underlying technology, but with a different stack.
+
 ## US
-Company | Type | Description|
+| Company | Type | Description|
  --- | --- | --- |
 | [OpenVZ](https://openvz.io/) | VPS | Cheap VPS running OpenVZ
 
 ## Europe
 Since I don't live here it's hard to keep track of decent providers.
-Company | Description|
+| Company | Description|
  --- | --- | --- |
 | [UpCloud](https://upcloud.com/) | French only DC's |
 | [UpCloud] (scaleway.com) | Europe |
+
+# Container Based
+
+| Company | Stack |  Description |
+ --- | --- | --- |
+| [Convesio](https://convesio.com/) | Docker | Using Docker Imaging for scaling/self-healing/high-availability.
+
+# Fully Managed
+
+
+# Managed Hosting
+# Docker
 
 # Control Panel and Stacks
 Company | Description|
