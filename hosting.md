@@ -47,10 +47,12 @@ Since I don't live here it's hard to keep track of decent providers.
  --- | --- | --- |
 | [Convesio](https://convesio.com/) | Docker | Using Docker Imaging for scaling/self-healing/high-availability.
 
-# Fully Managed
-
-
 # Managed Hosting
+# Shared
+# Control Panel and Stacks
+Company | Description|
+ --- | --- | --- |
+[EasyWP](https://easywp.com)| Managed Shared Hosting by NameCheap, no idea on stack.
 # Docker
 
 # Control Panel and Stacks
@@ -73,6 +75,7 @@ Company | Cost | Storage | Description|
 | [Mail Cheap](https://www.mailcheap.co/client/aff.php?aff=51) | $2/m USD | 10GB | Lots of options for email services, including dedicated servers.
 | [Zoho](https://www.zoho.com/mail/zohomail-pricing.html) | $1/m USD | 5GB | ?
 | [Rack Space](https://www.rackspace.com/email-hosting) | $2.99/m USD | 25GB | ?
+| [Migadu](https://www.migadu.com) | Unlimited features always. 1GB/10 Outgoing emails for Free. 100 Outgoing emails for $4/m USD. 
 
 # To Review
 - vipsdime.com - Decent, don't know. USD.
