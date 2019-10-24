@@ -5,33 +5,43 @@ This is a work in progress and I'd like to better be able to display information
 
 <!--ts-->
    * [Hosting](hosting.md#hosting)
-   * [Dedicated Resources/Bare Metal](hosting.md#dedicated-resourcesbare-metal)
+   * [Bare Metal](hosting.md#bare-metal)
       * [US](hosting.md#us)
-   * [VPS/Cloud](hosting.md#vpscloud)
+   * [Dedicated Resources](hosting.md#dedicated-resources)
       * [US](hosting.md#us-1)
+   * [VPS/Cloud](hosting.md#vpscloud)
+      * [US](hosting.md#us-2)
       * [Europe](hosting.md#europe)
-   * [Container Based](hosting.md#container-based)
    * [Managed Hosting](hosting.md#managed-hosting)
-   * [Shared](hosting.md#shared)
+      * [Container Based](hosting.md#container-based)
+         * [US](hosting.md#us-3)
+      * [Shared Hosting](hosting.md#shared-hosting)
+         * [US](hosting.md#us-4)
    * [Control Panel and Stacks](hosting.md#control-panel-and-stacks)
-   * [Docker](hosting.md#docker)
-   * [Control Panel and Stacks](hosting.md#control-panel-and-stacks-1)
+      * [Control Panels](hosting.md#control-panels)
+         * [Self Hosted](hosting.md#self-hosted)
+         * [Cloud Based](hosting.md#cloud-based)
+      * [Stacks](hosting.md#stacks)
    * [Email Providers](hosting.md#email-providers)
-   * [To Review](hosting.md#to-review)
+   * [Providers to Add](hosting.md#providers-to-add)
    * [Testing Method](hosting.md#testing-method)
       * [Suggestions](hosting.md#suggestions)
-      * [PHP Performance](hosting.md#php-performance)
 
-<!-- Added by: jtrask, at: Thu Oct 24 12:54:16 PDT 2019 -->
+<!-- Added by: jtrask, at: Thu Oct 24 13:03:45 PDT 2019 -->
 
 <!--te-->
 
-# Dedicated Resources/Bare Metal
-Recently only found this on Vultr, however it seems to out perform most providers. Dedicated resources if you need them.
+# Bare Metal
 ## US
 Company | Description|
  --- | --- | --- |
-| [Vultr](https://vultr.com/pricing/dedicated) | Dedicated resources, no over-comitted.
+| [Vultr](https://www.vultr.com/products/bare-metal/) | Bare Metal instances.
+
+# Dedicated Resources
+## US
+Company | Description|
+ --- | --- | --- |
+| [Vultr](https://www.vultr.com/products/dedicated-cloud/) | Dedicated cloud with overcommit ratio detailed, 25%, 50% to 75% commited resources.
 
 # VPS/Cloud
 I'm grouping VPS/Cloud due to the fact they're basically the same underlying technology, but with a different stack.
@@ -48,26 +58,31 @@ Since I don't live here it's hard to keep track of decent providers.
 | [UpCloud](https://upcloud.com/) | French only DC's |
 | [UpCloud] (scaleway.com) | Europe |
 
-# Container Based
-
+# Managed Hosting
+## Container Based
+### US
 | Company | Stack |  Description |
  --- | --- | --- |
 | [Convesio](https://convesio.com/) | Docker | Using Docker Imaging for scaling/self-healing/high-availability.
 
-# Managed Hosting
-# Shared
-# Control Panel and Stacks
+## Shared Hosting
+### US
 Company | Description|
  --- | --- | --- |
 [EasyWP](https://easywp.com)| Managed Shared Hosting by NameCheap, no idea on stack.
-# Docker
 
 # Control Panel and Stacks
+## Control Panels
+### Self Hosted
+### Cloud Based
 Company | Description|
  --- | --- | --- |
 | [Cloudways](https://www.cloudways.com/en/pricing.php) | Provides a decent NGiNX/PHP-FPM/Varnish Stack, includes a caching plugin called Breeze.
 | [SpinupWP](https://spinupwp.com)| Control Panel that works with Digital Ocean and other VPS providers.
 | [GRIDPANE](https://gridpane.com/) | Control Panel that works with multiple providers.
+
+## Stacks
+This will detail the various stacked used by most providers.
 
 # Email Providers
 The following section was added because I feel it's helpful.
@@ -83,13 +98,14 @@ Company | Cost | Storage | Description|
  [Rack Space](https://www.rackspace.com/email-hosting) | $2.99/m USD | 25GB | ?
  [Migadu](https://www.migadu.com) | Free/$4 | Unlimited features always. 1GB/10 Outgoing emails for Free. 100 Outgoing emails for $4/m USD. | 1GB to Unlimited
 
-# To Review
+# Providers to Add
 - vipsdime.com - Decent, don't know. USD.
 - frantech
 - nosupportlinux
 
 # Testing Method
-The testing method should ensure the following is completed.
+The testing method should ensure the following is completed for each provider.
+
 1. CPU Performance
 2. Disk Performance
 3. PHP Function Performance (Important for WordPress)
@@ -97,10 +113,6 @@ The testing method should ensure the following is completed.
 5. Network Latency and Throughout-put
 
 ##  Suggestions
-Still need to hash this out.
 - https://github.com/n-st/nench
-- Disk Tests Random IO
-    - ```fio --randrepeat=1 --ioengine=libaio --direct=1 --gtod_reduce=1 --name=test --filename=random_read_write.fio --bs=4k --iodepth=64 --size=4G --readwrite=randrw --rwmixread=75```
-## PHP Performance
-Need to update and include 
-- https://github.com/jordantrizz/ultimate-linux-tool-box/blob/master/php-cpu-test.php
+- Disk Tests Random IO ```fio --randrepeat=1 --ioengine=libaio --direct=1 --gtod_reduce=1 --name=test --filename=random_read_write.fio --bs=4k --iodepth=64 --size=4G --readwrite=randrw --rwmixread=75```
+- Need to update and include https://github.com/jordantrizz/ultimate-linux-tool-box/blob/master/php-cpu-test.php

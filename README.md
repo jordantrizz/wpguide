@@ -90,7 +90,7 @@ This is an on-going document, there are incomplete sections. Use at your own ris
          * [Secure WordPress Passwords](README.md#secure-wordpress-passwords)
    * [Interesting Reads and Sources](README.md#interesting-reads-and-sources)
 
-<!-- Added by: jtrask, at: Thu Oct 24 12:54:16 PDT 2019 -->
+<!-- Added by: jtrask, at: Thu Oct 24 13:03:44 PDT 2019 -->
 
 <!--te-->
 
