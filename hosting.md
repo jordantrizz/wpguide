@@ -51,7 +51,7 @@ Since I don't live here it's hard to keep track of decent providers.
 | Company | Description|
  --- | --- |
 | [UpCloud](https://upcloud.com/) | French only DC's 
-| [Scaleway] (https://scaleway.com) | Europe 
+| [Scaleway](https://scaleway.com) | Europe 
 
 # Managed Hosting/WordPress Specific
 ## Container Based
