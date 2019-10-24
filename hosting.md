@@ -47,6 +47,7 @@ I'm grouping VPS/Cloud due to the fact they're basically the same underlying tec
 
 ## Europe
 Since I don't live here it's hard to keep track of decent providers.
+
 | Company | Description|
  --- | --- |
 | [UpCloud](https://upcloud.com/) | French only DC's 
