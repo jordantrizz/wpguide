@@ -5,17 +5,24 @@ This is a work in progress and I'd like to better be able to display information
 
 <!--ts-->
    * [Hosting](hosting.md#hosting)
-   * [Dedicated Cloud/VPS](hosting.md#dedicated-cloudvps)
+   * [Dedicated Resources/Bare Metal](hosting.md#dedicated-resourcesbare-metal)
       * [US](hosting.md#us)
-   * [VPS](hosting.md#vps)
+   * [VPS/Cloud](hosting.md#vpscloud)
       * [US](hosting.md#us-1)
       * [Europe](hosting.md#europe)
+   * [Container Based](hosting.md#container-based)
+   * [Managed Hosting](hosting.md#managed-hosting)
+   * [Shared](hosting.md#shared)
+   * [Control Panel and Stacks](hosting.md#control-panel-and-stacks)
+   * [Docker](hosting.md#docker)
+   * [Control Panel and Stacks](hosting.md#control-panel-and-stacks-1)
+   * [Email Providers](hosting.md#email-providers)
    * [To Review](hosting.md#to-review)
    * [Testing Method](hosting.md#testing-method)
       * [Suggestions](hosting.md#suggestions)
       * [PHP Performance](hosting.md#php-performance)
 
-<!-- Added by: jtrask, at: Wed 29 May 2019 12:53:32 PDT -->
+<!-- Added by: jtrask, at: Thu Oct 24 12:54:16 PDT 2019 -->
 
 <!--te-->
 
