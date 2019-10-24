@@ -10,24 +10,31 @@ This document is a means to remind myself of the hosting solutions available but
 This is a work in progress and I'd like to better be able to display information as well as sort it accurately. Open to suggestons.
 
 <!--ts-->
+   * [Menu](hosting.md#menu)
    * [Hosting](hosting.md#hosting)
-   * [Dedicated Resources/Bare Metal](hosting.md#dedicated-resourcesbare-metal)
+   * [Bare Metal](hosting.md#bare-metal)
       * [US](hosting.md#us)
-   * [VPS/Cloud](hosting.md#vpscloud)
+   * [Dedicated Resources](hosting.md#dedicated-resources)
       * [US](hosting.md#us-1)
+   * [VPS/Cloud](hosting.md#vpscloud)
+      * [US](hosting.md#us-2)
       * [Europe](hosting.md#europe)
-   * [Container Based](hosting.md#container-based)
-   * [Managed Hosting](hosting.md#managed-hosting)
-      * [Shared](hosting.md#shared)
-      * [Control Panel and Stacks](hosting.md#control-panel-and-stacks)
-   * [Docker](hosting.md#docker)
-      * [Control Panel and Stacks](hosting.md#control-panel-and-stacks-1)
+   * [Managed Hosting/WordPress Specific](hosting.md#managed-hostingwordpress-specific)
+      * [Container Based](hosting.md#container-based)
+         * [US](hosting.md#us-3)
+      * [Shared Hosting](hosting.md#shared-hosting)
+         * [US](hosting.md#us-4)
+   * [Control Panel and Stacks](hosting.md#control-panel-and-stacks)
+      * [Control Panels](hosting.md#control-panels)
+         * [Self Hosted](hosting.md#self-hosted)
+         * [Cloud Based](hosting.md#cloud-based)
+      * [Stacks](hosting.md#stacks)
    * [Email Providers](hosting.md#email-providers)
-   * [To Review and Add](hosting.md#to-review-and-add)
+   * [Providers to Add](hosting.md#providers-to-add)
    * [Testing Method](hosting.md#testing-method)
       * [Suggestions](hosting.md#suggestions)
 
-<!-- Added by: jtrask, at: Thu Oct 24 12:56:05 PDT 2019 -->
+<!-- Added by: jtrask, at: Thu Oct 24 15:16:36 PDT 2019 -->
 
 <!--te-->
 

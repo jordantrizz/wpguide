@@ -1,10 +1,20 @@
-This file is mostly to provide alternatives to WordPress for specific requirements.
-
 # Menu
 * [Home](README.md) - This page!
 * [Alternatives to WordPress](alternatives.md) - Alternatives to WordPress
 * [Hosting Providers](hosting.md) - Wordpress Hosting Providers
 
+<!--ts-->
+   * [Menu](alternatives.md#menu)
+   * [Photography and Photo Sharing](alternatives.md#photography-and-photo-sharing)
+      * [Self-Hosted](alternatives.md#self-hosted)
+   * [Cloud Based](alternatives.md#cloud-based)
+   * [Static Hosting](alternatives.md#static-hosting)
+
+<!-- Added by: jtrask, at: Thu Oct 24 15:17:20 PDT 2019 -->
+
+<!--te-->
+
+This file is mostly to provide alternatives to WordPress for specific requirements.
 
 # Photography and Photo Sharing
 https://www.slant.co/topics/2099/~cloud-photo-storage-and-portfolio-services
