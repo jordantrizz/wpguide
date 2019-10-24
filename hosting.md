@@ -64,18 +64,17 @@ Company | Description|
 
 # Email Providers
 The following section was added because I feel it's helpful.
-
 <aside class="notice">The following links below may contain referral URL's and provide a kickback to myself.</aside>
 
 Company | Cost | Storage | Description|
- --- | --- | --- |
-| [GSuite Basic](https://goo.gl/P1dcnY) | $6/m USD | 30GB | Email + Storage. 30GB shared.
-| [GSuite Business](https://goo.gl/P1dcnY) | $12/m USD | 1000GB | Basic + 1TB or unlimited storage after 5 users.
-| [GSuite Non-profit](https://support.google.com/nonprofits/answer/3367223?hl=en) | FREE | 30GB | GSuite Basic but free.
-| [Mail Cheap](https://www.mailcheap.co/client/aff.php?aff=51) | $2/m USD | 10GB | Lots of options for email services, including dedicated servers.
-| [Zoho](https://www.zoho.com/mail/zohomail-pricing.html) | $1/m USD | 5GB | ?
-| [Rack Space](https://www.rackspace.com/email-hosting) | $2.99/m USD | 25GB | ?
-| [Migadu](https://www.migadu.com) | Unlimited features always. 1GB/10 Outgoing emails for Free. 100 Outgoing emails for $4/m USD. 
+ --- | --- | --- | --- |
+ [GSuite Basic](https://goo.gl/P1dcnY) | $6/m USD | 30GB | Email + Storage. 30GB shared.
+ [GSuite Business](https://goo.gl/P1dcnY) | $12/m USD | 1000GB | Basic + 1TB or unlimited storage after 5 users.
+ [GSuite Non-profit](https://support.google.com/nonprofits/answer/3367223?hl=en) | FREE | 30GB | GSuite Basic but free.
+ [Mail Cheap](https://www.mailcheap.co/client/aff.php?aff=51) | $2/m USD | 10GB | Lots of options for email services, including dedicated servers.
+ [Zoho](https://www.zoho.com/mail/zohomail-pricing.html) | $1/m USD | 5GB | ?
+ [Rack Space](https://www.rackspace.com/email-hosting) | $2.99/m USD | 25GB | ?
+ [Migadu](https://www.migadu.com) | Free/$4 | Unlimited features always. 1GB/10 Outgoing emails for Free. 100 Outgoing emails for $4/m USD. | 1GB to Unlimited
 
 # To Review
 - vipsdime.com - Decent, don't know. USD.
