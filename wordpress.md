@@ -1,3 +1,8 @@
+# Menu
+* [Home](README.md) - This page!
+* [Alternatives to WordPress](alternatives.md) - Alternatives to WordPress
+* [Hosting Providers](hosting.md) - Wordpress Hosting Providers
+
 # Ultimate WordPress Guide
 This guide provides the fastest WordPress instance available for use on a full operating system, it's based on Ubuntu 18. You can use some of the information within this guide for managed WordPress Hosting. However, you should contact your provider before proceeding with any changes contained in this guide.
 

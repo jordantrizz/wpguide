@@ -1,3 +1,9 @@
+# Menu
+* [Home](README.md) - This page!
+* [Alternatives to WordPress](alternatives.md) - Alternatives to WordPress
+* [Hosting Providers](hosting.md) - Wordpress Hosting Providers
+
+
 # Hosting
 This document is a means to remind myself of the hosting solutions available but also pointing out their technical infrastructure, function and performance.
 

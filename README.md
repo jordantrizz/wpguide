@@ -18,8 +18,7 @@ This is an on-going document, there are incomplete sections. Use at your own ris
 - I'm not responsible for data loss or service interruptions.
 - This is an unbiased guide, it's for pure speed and functionality.
 
-# TOC
-
+# Menu
 * [Home](README.md) - This page!
 * [Alternatives to WordPress](alternatives.md) - Alternatives to WordPress
 * [Hosting Providers](hosting.md) - Wordpress Hosting Providers
