@@ -5,60 +5,54 @@ This is a work in progress and I'd like to better be able to display information
 
 <!--ts-->
    * [Hosting](hosting.md#hosting)
-   * [Bare Metal](hosting.md#bare-metal)
+   * [Dedicated Resources/Bare Metal](hosting.md#dedicated-resourcesbare-metal)
       * [US](hosting.md#us)
-   * [Dedicated Resources](hosting.md#dedicated-resources)
-      * [US](hosting.md#us-1)
    * [VPS/Cloud](hosting.md#vpscloud)
-      * [US](hosting.md#us-2)
+      * [US](hosting.md#us-1)
       * [Europe](hosting.md#europe)
+   * [Container Based](hosting.md#container-based)
    * [Managed Hosting](hosting.md#managed-hosting)
-      * [Container Based](hosting.md#container-based)
-         * [US](hosting.md#us-3)
-      * [Shared Hosting](hosting.md#shared-hosting)
-         * [US](hosting.md#us-4)
-   * [Control Panel and Stacks](hosting.md#control-panel-and-stacks)
-      * [Control Panels](hosting.md#control-panels)
-         * [Self Hosted](hosting.md#self-hosted)
-         * [Cloud Based](hosting.md#cloud-based)
-      * [Stacks](hosting.md#stacks)
+      * [Shared](hosting.md#shared)
+      * [Control Panel and Stacks](hosting.md#control-panel-and-stacks)
+   * [Docker](hosting.md#docker)
+      * [Control Panel and Stacks](hosting.md#control-panel-and-stacks-1)
    * [Email Providers](hosting.md#email-providers)
-   * [Providers to Add](hosting.md#providers-to-add)
+   * [To Review and Add](hosting.md#to-review-and-add)
    * [Testing Method](hosting.md#testing-method)
       * [Suggestions](hosting.md#suggestions)
 
-<!-- Added by: jtrask, at: Thu Oct 24 13:03:45 PDT 2019 -->
+<!-- Added by: jtrask, at: Thu Oct 24 12:56:05 PDT 2019 -->
 
 <!--te-->
 
 # Bare Metal
 ## US
 Company | Description|
- --- | --- | --- |
+ --- | --- | 
 | [Vultr](https://www.vultr.com/products/bare-metal/) | Bare Metal instances.
 
 # Dedicated Resources
 ## US
 Company | Description|
- --- | --- | --- |
+ --- | --- |
 | [Vultr](https://www.vultr.com/products/dedicated-cloud/) | Dedicated cloud with overcommit ratio detailed, 25%, 50% to 75% commited resources.
 
 # VPS/Cloud
 I'm grouping VPS/Cloud due to the fact they're basically the same underlying technology, but with a different stack.
 
 ## US
-| Company | Type | Description|
+| Company | Description|
  --- | --- | --- |
-| [OpenVZ](https://openvz.io/) | VPS | Cheap VPS running OpenVZ
+| [OpenVZ](https://openvz.io/) | Cheap VPS running OpenVZ
 
 ## Europe
 Since I don't live here it's hard to keep track of decent providers.
 | Company | Description|
- --- | --- | --- |
+ --- | --- |
 | [UpCloud](https://upcloud.com/) | French only DC's |
-| [UpCloud] (scaleway.com) | Europe |
+| [Scaleway] (https://scaleway.com) | Europe |
 
-# Managed Hosting
+# Managed Hosting/WordPress Specific
 ## Container Based
 ### US
 | Company | Stack |  Description |
@@ -68,7 +62,7 @@ Since I don't live here it's hard to keep track of decent providers.
 ## Shared Hosting
 ### US
 Company | Description|
- --- | --- | --- |
+ --- | --- |
 [EasyWP](https://easywp.com)| Managed Shared Hosting by NameCheap, no idea on stack.
 
 # Control Panel and Stacks
@@ -76,7 +70,7 @@ Company | Description|
 ### Self Hosted
 ### Cloud Based
 Company | Description|
- --- | --- | --- |
+ --- | --- |
 | [Cloudways](https://www.cloudways.com/en/pricing.php) | Provides a decent NGiNX/PHP-FPM/Varnish Stack, includes a caching plugin called Breeze.
 | [SpinupWP](https://spinupwp.com)| Control Panel that works with Digital Ocean and other VPS providers.
 | [GRIDPANE](https://gridpane.com/) | Control Panel that works with multiple providers.
