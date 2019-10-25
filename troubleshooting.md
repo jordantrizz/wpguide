@@ -1,7 +1,16 @@
 # Main Menu
+<details><summary>Click to Expand</summary>
+<p>
+
 * [Home](README.md) - This page!
-* [Alternatives to WordPress](alternatives.md) - Alternatives to WordPress
-* [Hosting Providers](hosting.md) - Wordpress Hosting Providers
+* [WordPress](wordpress.md) - A guide on self hosting WordPress.
+* [Alternatives](alternatives.md) - Alternatives to WordPress
+* [Hosting](hosting.md) - WordPress Hosting Providers
+* [Tools](tools.md) - List of commonly used tools.
+* [Troubleshooting](troubleshooting.md) - Troubleshooting guide.
+
+</p>
+</details>
 
 # Disclaimer
 * Please Read [Ultimate WordPress Guide](README.md) First!
