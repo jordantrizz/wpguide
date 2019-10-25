@@ -102,7 +102,8 @@ Here are some tools to test the TTFB.
 
 # Wordpress
 ## Sentry
-[Sentry](https://sentry.io/welcome/)
+[Sentry](https://sentry.io/welcome/) is a cloud based error logging platform that allows you to monitor PHP errors.
+
 * Will notify you of WordPress related errors.
 * Inclues an error occurred WordPress screen.
 * Loads with WordPress init. So won't track issue beforehand. See [PHP](#PHP)
