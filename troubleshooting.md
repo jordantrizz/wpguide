@@ -18,22 +18,26 @@
 
 # Table of Contents
 <!--ts-->
-   * [Main Menu](troubleshooting.md#main-menu)
-   * [Disclaimer](troubleshooting.md#disclaimer)
-   * [Table of Contents](troubleshooting.md#table-of-contents)
-   * [Troubleshooting](troubleshooting.md#troubleshooting)
-      * [Order of Debugging](troubleshooting.md#order-of-debugging)
-   * [DNS](troubleshooting.md#dns)
-   * [HTTP Protocol](troubleshooting.md#http-protocol)
-   * [TTFB Explained](troubleshooting.md#ttfb-explained)
-      * [Static TTFB](troubleshooting.md#static-ttfb)
-      * [Dynamic TTFB](troubleshooting.md#dynamic-ttfb)
-      * [Testing TTFB](troubleshooting.md#testing-ttfb)
-         * [Curl - Using this command in Linux/OSX](troubleshooting.md#curl---using-this-command-in-linuxosx)
-         * [httpstat - python script that uses curl, pip install httpstat or brew install httpstat](troubleshooting.md#httpstat---python-script-that-uses-curl-pip-install-httpstat-or-brew-install-httpstat)
-         * [KeyCDN Tester - Multiple Locations.](troubleshooting.md#keycdn-tester---multiple-locations)
+   * [Main Menu](#main-menu)
+   * [Disclaimer](#disclaimer)
+   * [Table of Contents](#table-of-contents)
+   * [Troubleshooting](#troubleshooting)
+      * [Order of Debugging](#order-of-debugging)
+   * [DNS](#dns)
+   * [HTTP Protocol](#http-protocol)
+   * [TTFB](#ttfb)
+      * [Static TTFB](#static-ttfb)
+      * [Dynamic TTFB](#dynamic-ttfb)
+      * [Testing TTFB](#testing-ttfb)
+         * [Curl - Using this command in Linux/OSX](#curl---using-this-command-in-linuxosx)
+         * [httpstat - python script that uses curl, pip install httpstat or brew install httpstat](#httpstat---python-script-that-uses-curl-pip-install-httpstat-or-brew-install-httpstat)
+         * [KeyCDN Tester - Multiple Locations.](#keycdn-tester---multiple-locations)
+   * [PHP](#php)
+      * [NewRelic](#newrelic)
+   * [Wordpress](#wordpress)
+      * [Sentry](#sentry)
 
-<!-- Added by: jtrask, at: Fri Oct 25 10:19:12 PDT 2019 -->
+<!-- Added by: jtrask, at: Fri Oct 25 14:34:26 PDT 2019 -->
 
 <!--te-->
 
@@ -42,16 +46,18 @@
 This page outlines some of the methods I use to troubleshoot issues not only on a WordPress site but also other web frameworks and services.
 
 ## Order of Debugging
-* DNS
-* HTTP Protocol
-* TTFB
+This is currently out of order due to the fact some items are missing. :)
+* [DNS](#DNS)
+* [HTTP Protocol](#HTTP-Protocol)
+* [TTFB](#TTFB)
+* [WordPress](#wordpress)
 
 # DNS
 * [The Myth of DNS Propagation](https://www.tiger-computing.co.uk/myth-dns-propagation/)
 * dnstracer - Linux command ```dnstracer -o -s b.root-servers.net -4 -r 1 yourdomain.com```
 
 # HTTP Protocol
-# TTFB Explained
+# TTFB
 Time to First Byte is a rather interesting topic. I really like the [WikiPedia](https://en.wikipedia.org/wiki/Time_to_first_byte)
 
 >TTFB measures the duration from the user or client making an HTTP request to the first byte of the page being received by the client's browser. This time is made up of the socket connection time, the time taken to send the HTTP request, and the time taken to get the first byte of the page. Although sometimes misunderstood as a post-DNS calculation, the original calculation of TTFB in networking always includes network latency in measuring the time it takes for a resource to begin loading.[citation needed] Often, a smaller (faster) TTFB size is seen as a benchmark of a well-configured server application. For example, a lower time to first byte could point to fewer dynamic calculations being performed by the webserver, although this is often due to caching at either the DNS, server, or application level. More commonly, a very low TTFB is observed with statically served web pages, while larger TTFB is often seen with larger, dynamic data requests being pulled from a database.
@@ -87,4 +93,19 @@ Here are some tools to test the TTFB.
 ![screenshot](https://github.com/reorx/httpstat/raw/master/screenshot.png)
 ### KeyCDN Tester - Multiple Locations.
 * https://tools.keycdn.com/performance?url=https://google.com
-    
+
+# PHP
+## NewRelic
+* Catches PHP runtime errors.
+* Requires PHP module.
+* Not possible on some shared hosts, requires zend_extension access.
+
+# Wordpress
+## Sentry
+[Sentry](https://sentry.io/welcome/)
+* Will notify you of WordPress related errors.
+* Inclues an error occurred WordPress screen.
+* Loads with WordPress init. So won't track issue beforehand. See [PHP](#PHP)
+* Free for 50k errors per month.
+* Has a supported plugin [WP Sentry Integration](https://wordpress.org/plugins/wp-sentry-integration/)
+* Simple modify the wp-config.php

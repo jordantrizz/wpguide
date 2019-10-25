@@ -19,33 +19,33 @@
 # Table of Contents
 
 <!--ts-->
-   * [Main Menu](hosting.md#main-menu)
-   * [Disclaimer](hosting.md#disclaimer)
-   * [Table of Contents](hosting.md#table-of-contents)
-   * [Hosting](hosting.md#hosting)
-   * [Bare Metal](hosting.md#bare-metal)
-      * [US](hosting.md#us)
-   * [Dedicated Resources](hosting.md#dedicated-resources)
-      * [US](hosting.md#us-1)
-   * [VPS/Cloud](hosting.md#vpscloud)
-      * [US](hosting.md#us-2)
-      * [Europe](hosting.md#europe)
-   * [Managed Hosting/WordPress Specific](hosting.md#managed-hostingwordpress-specific)
-      * [Container Based](hosting.md#container-based)
-         * [US](hosting.md#us-3)
-      * [Shared Hosting](hosting.md#shared-hosting)
-         * [US](hosting.md#us-4)
-   * [Control Panel and Stacks](hosting.md#control-panel-and-stacks)
-      * [Control Panels](hosting.md#control-panels)
-         * [Self Hosted](hosting.md#self-hosted)
-         * [Cloud Based](hosting.md#cloud-based)
-      * [Stacks](hosting.md#stacks)
-   * [Email Providers](hosting.md#email-providers)
-   * [Providers to Add](hosting.md#providers-to-add)
-   * [Testing Method](hosting.md#testing-method)
-      * [Suggestions](hosting.md#suggestions)
+   * [Main Menu](#main-menu)
+   * [Disclaimer](#disclaimer)
+   * [Table of Contents](#table-of-contents)
+   * [Hosting](#hosting)
+   * [Bare Metal](#bare-metal)
+      * [US](#us)
+   * [Dedicated Resources](#dedicated-resources)
+      * [US](#us-1)
+   * [VPS/Cloud](#vpscloud)
+      * [US](#us-2)
+      * [Europe](#europe)
+   * [Managed Hosting/WordPress Specific](#managed-hostingwordpress-specific)
+      * [Container Based](#container-based)
+         * [US](#us-3)
+      * [Shared Hosting](#shared-hosting)
+         * [US](#us-4)
+   * [Control Panel and Stacks](#control-panel-and-stacks)
+      * [Control Panels](#control-panels)
+         * [Self Hosted](#self-hosted)
+         * [Cloud Based](#cloud-based)
+      * [Stacks](#stacks)
+   * [Email Providers](#email-providers)
+   * [Providers to Add](#providers-to-add)
+   * [Testing Method](#testing-method)
+      * [Suggestions](#suggestions)
 
-<!-- Added by: jtrask, at: Fri Oct 25 10:19:12 PDT 2019 -->
+<!-- Added by: jtrask, at: Fri Oct 25 14:34:21 PDT 2019 -->
 
 <!--te-->
 
@@ -67,9 +67,10 @@ Company | Description|
 I'm grouping VPS/Cloud due to the fact they're basically the same underlying technology, but with a different stack.
 
 ## US
-| Company | Description|
- --- | --- |
+| Company | Cost Description|
+ --- | --- | --- |
 | [OpenVZ](https://openvz.io/) | Cheap VPS running OpenVZ
+| Google| [Free](https://cloud.google.com/free/docs/gcp-free-tier?fbclid=IwAR2_KCwkaUn5hPgxM-1g8LwS9vSyi63P7vpSiJIevaumSO7FMXvv9WfLfKQ#always-free-usage-limits) to $$ | Googles Cloud Platform Cloud Platform
 
 ## Europe
 Since I don't live here it's hard to keep track of decent providers.
