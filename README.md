@@ -1,12 +1,14 @@
 # Main Menu
 <details><summary>Click to Expand</summary>
 <p>
+
 * [Home](README.md) - This page!
 * [WordPress](wordpress.md) - A guide on self hosting WordPress.
 * [Alternatives](alternatives.md) - Alternatives to WordPress
 * [Hosting](hosting.md) - WordPress Hosting Providers
 * [Tools](tools.md) - List of commonly used tools.
 * [Troubleshooting](troubleshooting.md) - Troubleshooting guide.
+
 </p>
 </details>
 
