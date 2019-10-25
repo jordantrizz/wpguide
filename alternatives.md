@@ -19,13 +19,15 @@
 # Table of Contents
 
 <!--ts-->
-   * [Menu](alternatives.md#menu)
+   * [Main Menu](alternatives.md#main-menu)
+   * [Disclaimer](alternatives.md#disclaimer)
+   * [Table of Contents](alternatives.md#table-of-contents)
    * [Photography and Photo Sharing](alternatives.md#photography-and-photo-sharing)
       * [Self-Hosted](alternatives.md#self-hosted)
    * [Cloud Based](alternatives.md#cloud-based)
    * [Static Hosting](alternatives.md#static-hosting)
 
-<!-- Added by: jtrask, at: Thu Oct 24 15:17:20 PDT 2019 -->
+<!-- Added by: jtrask, at: Fri Oct 25 10:19:11 PDT 2019 -->
 
 <!--te-->
 

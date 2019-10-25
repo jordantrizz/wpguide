@@ -19,7 +19,9 @@
 # Table of Contents
 
 <!--ts-->
-   * [Menu](hosting.md#menu)
+   * [Main Menu](hosting.md#main-menu)
+   * [Disclaimer](hosting.md#disclaimer)
+   * [Table of Contents](hosting.md#table-of-contents)
    * [Hosting](hosting.md#hosting)
    * [Bare Metal](hosting.md#bare-metal)
       * [US](hosting.md#us)
@@ -43,7 +45,7 @@
    * [Testing Method](hosting.md#testing-method)
       * [Suggestions](hosting.md#suggestions)
 
-<!-- Added by: jtrask, at: Thu Oct 24 15:16:36 PDT 2019 -->
+<!-- Added by: jtrask, at: Fri Oct 25 10:19:12 PDT 2019 -->
 
 <!--te-->
 

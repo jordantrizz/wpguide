@@ -9,6 +9,17 @@
 
 # Table of Contents
 <!--ts-->
+   * [Main Menu](README.md#main-menu)
+   * [Table of Contents](README.md#table-of-contents)
+   * [Ultimate WordPress Guide](README.md#ultimate-wordpress-guide)
+      * [Cautionary Liabilities](README.md#cautionary-liabilities)
+      * [Manifesto](README.md#manifesto)
+      * [Contact](README.md#contact)
+      * [Sponsors](README.md#sponsors)
+   * [Improvements](README.md#improvements)
+
+<!-- Added by: jtrask, at: Fri Oct 25 10:19:11 PDT 2019 -->
+
 <!--te-->
 
 # Ultimate WordPress Guide

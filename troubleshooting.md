@@ -18,6 +18,22 @@
 
 # Table of Contents
 <!--ts-->
+   * [Main Menu](troubleshooting.md#main-menu)
+   * [Disclaimer](troubleshooting.md#disclaimer)
+   * [Table of Contents](troubleshooting.md#table-of-contents)
+   * [Troubleshooting](troubleshooting.md#troubleshooting)
+      * [Order of Debugging](troubleshooting.md#order-of-debugging)
+   * [DNS](troubleshooting.md#dns)
+   * [HTTP Protocol](troubleshooting.md#http-protocol)
+   * [TTFB Explained](troubleshooting.md#ttfb-explained)
+      * [Static TTFB](troubleshooting.md#static-ttfb)
+      * [Dynamic TTFB](troubleshooting.md#dynamic-ttfb)
+      * [Testing TTFB](troubleshooting.md#testing-ttfb)
+         * [Curl - Using this command in Linux/OSX](troubleshooting.md#curl---using-this-command-in-linuxosx)
+         * [httpstat - python script that uses curl, pip install httpstat or brew install httpstat](troubleshooting.md#httpstat---python-script-that-uses-curl-pip-install-httpstat-or-brew-install-httpstat)
+         * [KeyCDN Tester - Multiple Locations.](troubleshooting.md#keycdn-tester---multiple-locations)
+
+<!-- Added by: jtrask, at: Fri Oct 25 10:19:12 PDT 2019 -->
 
 <!--te-->
 
