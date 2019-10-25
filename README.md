@@ -1,24 +1,47 @@
-# Ultimate WordPress Guide
-This guide provides the fastest WordPress instance available for use on a full operating system, it's based on Ubuntu 18. You can use some of the information within this guide for managed WordPress Hosting. However, you should contact your provider before proceeding with any changes contained in this guide.
+# Main Menu
+<details><summary>Click to Expand</summary>
+<p>
+* [Home](README.md) - This page!
+* [WordPress](wordpress.md) - A guide on self hosting WordPress.
+* [Alternatives](alternatives.md) - Alternatives to WordPress
+* [Hosting](hosting.md) - WordPress Hosting Providers
+* [Tools](tools.md) - List of commonly used tools.
+* [Troubleshooting](troubleshooting.md) - Troubleshooting guide.
+</p>
+</details>
 
-I've created this guide based on my own experiences and research. If you have any questions, please email me directly or create a github issue.
-I'm also on Gitter [![Gitter](https://badges.gitter.im/jordantrizz/community.svg)](https://gitter.im/jordantrizz/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge) if I don't respond, then email me and I'll hop on.
+# Table of Contents
+<!--ts-->
+<!--te-->
+
+# Ultimate WordPress Guide
+## Cautionary Liabilities
+<aside class="warning">
+> :warning: This is an on-going document, there are incomplete sections. Use at your own risk.
+</aside>
+* This guide is a work in progress.
+* There are no guarantees.
+* I'm not responsible for data loss or service interruptions.
+
+## Manifesto
+Didn't know what to call this section, but this was somewhat relevant [Hackers 1999](https://www.youtube.com/watch?v=YvK7V7U5Mck) / [Text](http://phrack.org/issues/7/3.html)
+
+* This article is mostly for my own consumption above all. 
+* There's lots of information out there, a good portion is outdated.
+* I vet information posted here myself, and am open to others input.
+* I will never change facts based on financial compensation.
+* I use this to provide answers to questions posted to online communities.
+* I will admit fault and errors, so please keep me accountable.
+* I will detail what is personal opinion.
+
+## Contact
+* You can post an issue, and everyone can see it! 
+* You can also email me directly. 
+* Message me on Gitter [![Gitter](https://badges.gitter.im/jordantrizz/community.svg)](https://gitter.im/jordantrizz/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge) 
 
 ## Sponsors
 This guide is sponsored by the following organizations.
+* [LMT Solutions](https://lmt.ca) (Personal)
+* [Jordan Trask](https://jordantrask.com) (Personal)
 
-- This guide is sponsored by [LMT Solutions](https://lmt.ca)
-
-## Cautionary Disclaimer
-<aside class="warning">
-This is an on-going document, there are incomplete sections. Use at your own risk.
-</aside>
-- This guide is a work in progress.
-- There are no guarantees.
-- I'm not responsible for data loss or service interruptions.
-- This is an unbiased guide, it's for pure speed and functionality.
-
-# Menu
-* [Home](README.md) - This page!
-* [Alternatives to WordPress](alternatives.md) - Alternatives to WordPress
-* [Hosting Providers](hosting.md) - Wordpress Hosting Providers
+# Improvements

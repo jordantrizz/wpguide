@@ -1,7 +1,13 @@
-# Menu
+# Main Menu
 * [Home](README.md) - This page!
 * [Alternatives to WordPress](alternatives.md) - Alternatives to WordPress
 * [Hosting Providers](hosting.md) - Wordpress Hosting Providers
+
+# Disclaimer
+* Please Read [Ultimate WordPress Guide](README.md) First!
+* Contact is here [Ultimate WordPress Guide](README.md#Contact)
+
+# Table of Contents
 
 <!--ts-->
    * [Menu](alternatives.md#menu)

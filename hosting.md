@@ -1,13 +1,13 @@
-# Menu
+# Main Menu
 * [Home](README.md) - This page!
 * [Alternatives to WordPress](alternatives.md) - Alternatives to WordPress
 * [Hosting Providers](hosting.md) - Wordpress Hosting Providers
 
+# Disclaimer
+* Please Read [Ultimate WordPress Guide](README.md) First!
+* Contact is here [Ultimate WordPress Guide](README.md#Contact)
 
-# Hosting
-This document is a means to remind myself of the hosting solutions available but also pointing out their technical infrastructure, function and performance.
-
-This is a work in progress and I'd like to better be able to display information as well as sort it accurately. Open to suggestons.
+# Table of Contents
 
 <!--ts-->
    * [Menu](hosting.md#menu)
@@ -37,6 +37,8 @@ This is a work in progress and I'd like to better be able to display information
 <!-- Added by: jtrask, at: Thu Oct 24 15:16:36 PDT 2019 -->
 
 <!--te-->
+
+# Hosting
 
 # Bare Metal
 ## US

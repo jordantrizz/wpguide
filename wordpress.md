@@ -1,27 +1,11 @@
-# Menu
+# Main Menu
 * [Home](README.md) - This page!
 * [Alternatives to WordPress](alternatives.md) - Alternatives to WordPress
 * [Hosting Providers](hosting.md) - Wordpress Hosting Providers
 
-# Ultimate WordPress Guide
-This guide provides the fastest WordPress instance available for use on a full operating system, it's based on Ubuntu 18. You can use some of the information within this guide for managed WordPress Hosting. However, you should contact your provider before proceeding with any changes contained in this guide.
-
-I've created this guide based on my own experiences and research. If you have any questions, please email me directly or create a github issue.
-I'm also on Gitter [![Gitter](https://badges.gitter.im/jordantrizz/community.svg)](https://gitter.im/jordantrizz/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge) if I don't respond, then email me and I'll hop on.
-
-## Sponsors
-This guide is sponsored by the following organizations.
-
-- This guide is sponsored by [LMT Solutions](https://lmt.ca)
-
-## Cautionary Disclaimer
-<aside class="warning">
-This is an on-going document, there are incomplete sections. Use at your own risk.
-</aside>
-- This guide is a work in progress.
-- There are no guarantees.
-- I'm not responsible for data loss or service interruptions.
-- This is an unbiased guide, it's for pure speed and functionality.
+# Disclaimer
+* Please Read [Ultimate WordPress Guide](README.md) First!
+* Contact is here [Ultimate WordPress Guide](README.md#Contact)
 
 # Table of Contents
 
@@ -98,6 +82,10 @@ This is an on-going document, there are incomplete sections. Use at your own ris
 <!-- Added by: jtrask, at: Thu Oct 24 13:03:44 PDT 2019 -->
 
 <!--te-->
+
+# Foreword
+This guide provides the fastest WordPress instance available for use on a full operating system, it's based on Ubuntu 18. You can use some of the information within this guide for managed WordPress Hosting. However, you should contact your provider before proceeding with any changes contained in this guide.
+
 
 # Infrastructure Technology
 When deciding on infrastructure to run WordPress on, I wanted to make sure functionality came first and speed was second. Here is a breakdown of all the required pieces to run a WordPress instance.
