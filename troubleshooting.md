@@ -79,12 +79,12 @@ However, there is always a cost to each request and you need to ensure that you'
 
 TLDR; Overall TTFB is affected by dynamic content or processes, as these require more resources to execute.
 
-Haven't gotten time to write this section. 
+Haven't gotten time to write this section.
 
 ## Testing TTFB
 Here are some tools to test the TTFB.
 
-### Curl - Using this command in Linux/OSX 
+### Curl - Using this command in Linux/OSX
 * ```curl -s -o /dev/null -w "Connect: %{time_connect} TTFB: %{time_starttransfer} Total time: %{time_total} \n" mywebsite.com``
 *   You can make the above an alias in your sell for easier access.
 ### httpstat - python script that uses curl, pip install httpstat or brew install httpstat
@@ -108,4 +108,4 @@ Here are some tools to test the TTFB.
 * Loads with WordPress init. So won't track issue beforehand. See [PHP](#PHP)
 * Free for 50k errors per month.
 * Has a supported plugin [WP Sentry Integration](https://wordpress.org/plugins/wp-sentry-integration/)
-* Simple modify the wp-config.php
+* Simply add PHP_DSN to wp-config.php as per these instructions https://wordpress.org/plugins/wp-sentry-integration/#installation
