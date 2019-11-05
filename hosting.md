@@ -34,7 +34,7 @@
       * [Container Based](#container-based)
          * [US](#us-3)
       * [Shared Hosting](#shared-hosting)
-         * [US](#us-4)
+      * [US](#us-4)
    * [Control Panel and Stacks](#control-panel-and-stacks)
       * [Control Panels](#control-panels)
          * [Self Hosted](#self-hosted)
@@ -92,6 +92,7 @@ Since I don't live here it's hard to keep track of decent providers.
 Company | Description|
  --- | --- |
 [EasyWP](https://easywp.com)| Managed Shared Hosting by NameCheap, no idea on stack.
+[BitWP]https://bitwp.io/| Managed Shared hosting using DigitalOcean and GCP.
 
 # Control Panel and Stacks
 ## Control Panels
