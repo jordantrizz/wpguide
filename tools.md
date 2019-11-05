@@ -22,6 +22,11 @@
 <!--te-->
 
 # Tools
+
+# Chrome Plugins
+
+* (LiveHosts)[https://chrome.google.com/webstore/detail/livehosts/hdpoplemgeaioijkmoebnnjcilfjnjdi?hl=en]
+
 # Editors
 | Name | Description
 | --- | --- | 
