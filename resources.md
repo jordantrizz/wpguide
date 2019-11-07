@@ -44,6 +44,8 @@
 # Resources
 This is a list of resources I've found helpful.
 
-# Themes and Plugins
+# Themes and Plugin Development
 * https://festingerbhw.com/
 * https://www.capitalnumbers.com/
+* https://ripplepop.com
+
