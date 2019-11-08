@@ -82,6 +82,12 @@ Since I don't live here it's hard to keep track of decent providers.
 
 # Managed Hosting/WordPress Specific
 ## Container Based
+### Multiple Locations
+
+| Company | Stack |  Description |
+ --- | --- | --- |
+| [ServeBolt](https://servebolt.com) | Boltz? | Container based, need more information.
+
 ### US
 | Company | Stack |  Description |
  --- | --- | --- |
