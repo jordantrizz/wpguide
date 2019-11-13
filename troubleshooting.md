@@ -50,6 +50,7 @@ This is currently out of order due to the fact some items are missing. :)
 * [DNS](#DNS)
 * [HTTP Protocol](#HTTP-Protocol)
 * [TTFB](#TTFB)
+* [PHP](#PHP)
 * [WordPress](#wordpress)
 
 # DNS
@@ -110,3 +111,6 @@ Here are some tools to test the TTFB.
 * Free for 50k errors per month.
 * Has a supported plugin [WP Sentry Integration](https://wordpress.org/plugins/wp-sentry-integration/)
 * Simply add PHP_DSN to wp-config.php as per these instructions https://wordpress.org/plugins/wp-sentry-integration/#installation
+
+# Paid Support
+* [Ripple Pop](https://ripplepop.com)
