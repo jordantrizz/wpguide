@@ -6,6 +6,7 @@
 * [Hosting](hosting.md) - WordPress Hosting Providers
 * [Tools](tools.md) - List of commonly used tools.
 * [Troubleshooting](troubleshooting.md) - Troubleshooting guide.
+* [Control Panels](controlpanels.md) - Control Panels
 
 # Table of Contents
 <!--ts-->

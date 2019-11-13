@@ -1,3 +1,14 @@
+* [Home](README.md) - This page!
+* [WordPress](wordpress.md) - A guide on self hosting WordPress.
+* [Alternatives](alternatives.md) - Alternatives to WordPress
+* [Hosting](hosting.md) - WordPress Hosting Providers
+* [Tools](tools.md) - List of commonly used tools.
+* [Troubleshooting](troubleshooting.md) - Troubleshooting guide.
+* [Control Panels](controlpanels.md) - Control Panels
+
+<!--ts-->
+<!--te-->
+
 A recent review of Control Panels security has been done, you can read it here https://www.rack911labs.com/research/security-analysis-of-alternative-control-panels/
 
 Has a referral key.
