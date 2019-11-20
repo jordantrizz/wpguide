@@ -122,6 +122,7 @@ Company | Cost | Description|
 | --- | --- | --- | --- |
 | ForwardMX |  $ | Don't use, online but not response from owner.
 | [ForwardEmail.net](https://forwardemail.net/#/) | free | Utilizes DNS records, not entirely secure
+| [ImprovMX](https://improvmx.com/) | Free | Simple and straightfowrard, although rumblings about outages as long as two days.
 
 ## Email Providers
 The following section was added because I feel it's helpful.
