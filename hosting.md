@@ -118,9 +118,10 @@ Because hosting email on the same resources as your website is not ideal.
 ## Email Forwarding
 If you simply need to forward email.
 
-Company | Cost | Storage | Description|
+Company | Cost | Description|
 | --- | --- | --- | --- |
-| ForwardMX |  $ | | Don't use, online but not response from owner.
+| ForwardMX |  $ | Don't use, online but not response from owner.
+| [ForwardEmail.net](https://forwardemail.net/#/) | free | Utilizes DNS records, not entirely secure
 
 ## Email Providers
 The following section was added because I feel it's helpful.
@@ -137,10 +138,11 @@ Company | Cost | Storage | Description|
  [Migadu](https://www.migadu.com) | Free/$4 | Unlimited features always. 1GB/10 Outgoing emails for Free. 100 Outgoing emails for $4/m USD. | 1GB to Unlimited
 
 # Domains
-Need to flesh this out.
+Need to flesh this out. 
 
-https://www.gandi.net/en/domain
-https://www.gandi.net/en/domain
+## Domains with Email
+- https://www.gandi.net/en/domain
+- https://www.hover.com/
 
 # Providers to Add
 - vipsdime.com - Decent, don't know. USD.
