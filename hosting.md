@@ -113,7 +113,16 @@ Company | Description|
 ## Stacks
 This will detail the various stacked used by most providers.
 
-# Email Providers
+# Email
+Because hosting email on the same resources as your website is not ideal.
+## Email Forwarding
+If you simply need to forward email.
+
+Company | Cost | Storage | Description|
+| --- | --- | --- | --- |
+| ForwardMX |  $ | | Don't use, online but not response from owner.
+
+## Email Providers
 The following section was added because I feel it's helpful.
 <aside class="notice">The following links below may contain referral URL's and provide a kickback to myself.</aside>
 
@@ -126,6 +135,12 @@ Company | Cost | Storage | Description|
  [Zoho](https://www.zoho.com/mail/zohomail-pricing.html) | $1/m USD | 5GB | ?
  [Rack Space](https://www.rackspace.com/email-hosting) | $2.99/m USD | 25GB | ?
  [Migadu](https://www.migadu.com) | Free/$4 | Unlimited features always. 1GB/10 Outgoing emails for Free. 100 Outgoing emails for $4/m USD. | 1GB to Unlimited
+
+# Domains
+Need to flesh this out.
+
+https://www.gandi.net/en/domain
+https://www.gandi.net/en/domain
 
 # Providers to Add
 - vipsdime.com - Decent, don't know. USD.
