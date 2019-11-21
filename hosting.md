@@ -119,7 +119,7 @@ Because hosting email on the same resources as your website is not ideal.
 If you simply need to forward email.
 
 Company | Cost | Description|
-| --- | --- | --- | --- |
+| --- | --- | --- |
 | ForwardMX |  $ | Don't use, online but not response from owner.
 | [ForwardEmail.net](https://forwardemail.net/#/) | free | Utilizes DNS records, not entirely secure
 | [ImprovMX](https://improvmx.com/) | Free | Simple and straightfowrard, although rumblings about outages as long as two days.
