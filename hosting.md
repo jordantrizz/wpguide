@@ -67,9 +67,9 @@ Company | Description|
 I'm grouping VPS/Cloud due to the fact they're basically the same underlying technology, but with a different stack.
 
 ## US
-| Company | Cost Description|
+| Company | Cost | Description|
  --- | --- | --- |
-| [OpenVZ](https://openvz.io/) | Cheap VPS running OpenVZ
+| [OpenVZ](https://openvz.io/) | $$ | Cheap VPS running OpenVZ
 | Google| [Free](https://cloud.google.com/free/docs/gcp-free-tier?fbclid=IwAR2_KCwkaUn5hPgxM-1g8LwS9vSyi63P7vpSiJIevaumSO7FMXvv9WfLfKQ#always-free-usage-limits) to $$ | Googles Cloud Platform Cloud Platform
 
 ## Europe
@@ -81,7 +81,8 @@ Since I don't live here it's hard to keep track of decent providers.
 | [Scaleway](https://scaleway.com) | Europe 
 
 # Managed Hosting/WordPress Specific
-## Container Based
+## Managed VPS
+## Managed Container Based
 ### Multiple Locations
 
 | Company | Stack |  Description |
@@ -149,6 +150,8 @@ Need to flesh this out.
 - vipsdime.com - Decent, don't know. USD.
 - frantech
 - nosupportlinux
+- https://trulywp.com/plans/
+- https://backupsy.com/
 
 # Testing Method
 The testing method should ensure the following is completed for each provider.
