@@ -152,6 +152,7 @@ Need to flesh this out.
 - nosupportlinux
 - https://trulywp.com/plans/
 - https://backupsy.com/
+- https://sitedistrict.com/#highlights
 
 # Testing Method
 The testing method should ensure the following is completed for each provider.
