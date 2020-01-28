@@ -18,6 +18,10 @@ Has a referral key.
 
 # Self-hosted.
 ## Free
+| Name | OS  | Price |
+ --- | --- | --- |
+|[HestiaCP](https://hestiacp.com/) | Ubuntu/Debian | Apache/NGiNX? | Free |
+
 ## Paid
 ### Apache
 | Name | OS  | Price |
