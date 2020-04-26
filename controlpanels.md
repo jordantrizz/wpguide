@@ -18,9 +18,15 @@ Has a referral key.
 
 # Self-hosted.
 ## Free
+### Unknown
 | Name | OS  | Price |
  --- | --- | --- |
 |[HestiaCP](https://hestiacp.com/) | Ubuntu/Debian | Apache/NGiNX? | Free |
+### Multi
+| Name | OS  | Price |
+ --- | --- | --- |
+|[aaPanel](https://aapanel.com) | CentOS7.1+ Ubuntu 16.04+ Debian 9.0+ | Apache/NGiNX/OpenLitespeed | Free |
+
 
 ## Paid
 ### Apache
