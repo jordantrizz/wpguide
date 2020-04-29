@@ -10,16 +10,16 @@
 
 # Table of Contents
 <!--ts-->
-   * [Main Menu](README.md#main-menu)
-   * [Table of Contents](README.md#table-of-contents)
-   * [Ultimate WordPress Guide](README.md#ultimate-wordpress-guide)
-      * [Cautionary Liabilities](README.md#cautionary-liabilities)
-      * [Manifesto](README.md#manifesto)
-      * [Contact](README.md#contact)
-      * [Sponsors](README.md#sponsors)
-   * [Improvements](README.md#improvements)
+   * [Main Menu](#main-menu)
+   * [Table of Contents](#table-of-contents)
+   * [Ultimate WordPress Guide](#ultimate-wordpress-guide)
+      * [Cautionary Liabilities](#cautionary-liabilities)
+      * [Manifesto](#manifesto)
+      * [Contact](#contact)
+      * [Sponsors](#sponsors)
+   * [Improvements](#improvements)
 
-<!-- Added by: jtrask, at: Fri Oct 25 10:19:11 PDT 2019 -->
+<!-- Added by: jtrask, at: Wed Apr 29 07:01:44 PDT 2020 -->
 
 <!--te-->
 

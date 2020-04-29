@@ -22,10 +22,16 @@ Has a referral key.
 | Name | OS  | Price |
  --- | --- | --- |
 |[HestiaCP](https://hestiacp.com/) | Ubuntu/Debian | Apache/NGiNX? | Free |
+
+### Apache
+| Name | OS  | Price |
+ --- | --- | --- |
+|[TinyCP](https://tinycp.com/) | Ubuntu / Debian | Apache/NGiNX/OpenLitespeed | Free |
+
 ### Multi
 | Name | OS  | Price |
  --- | --- | --- |
-|[aaPanel](https://aapanel.com) | CentOS7.1+ Ubuntu 16.04+ Debian 9.0+ | Apache/NGiNX/OpenLitespeed | Free |
+|[aaPanel](https://aapanel.com) | Ubuntu / Debian | Apache | Free |
 
 
 ## Paid
