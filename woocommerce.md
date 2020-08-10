@@ -1,0 +1,1 @@
+https://en-ca.wordpress.org/plugins/wc-multiple-email-recipients/
