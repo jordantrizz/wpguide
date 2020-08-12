@@ -54,74 +54,6 @@
 
 <!--te-->
 
-# Hosting
-
-# Bare Metal
-## US
-Company | Description|
- --- | --- | 
-| [Vultr](https://www.vultr.com/products/bare-metal/) | Bare Metal instances.
-
-# Dedicated Resources
-## US
-Company | Description|
- --- | --- |
-| [Vultr](https://www.vultr.com/products/dedicated-cloud/) | Dedicated cloud with overcommit ratio detailed, 25%, 50% to 75% commited resources.
-
-# VPS/Cloud
-I'm grouping VPS/Cloud due to the fact they're basically the same underlying technology, but with a different stack.
-
-## US
-| Company | Cost | Description|
- --- | --- | --- |
-| [OpenVZ](https://openvz.io/) | $$ | Cheap VPS running OpenVZ
-| Google| [Free](https://cloud.google.com/free/docs/gcp-free-tier?fbclid=IwAR2_KCwkaUn5hPgxM-1g8LwS9vSyi63P7vpSiJIevaumSO7FMXvv9WfLfKQ#always-free-usage-limits) to $$ | Googles Cloud Platform Cloud Platform
-
-## Europe
-Since I don't live here it's hard to keep track of decent providers.
-
-| Company | Description|
- --- | --- |
-| [UpCloud](https://upcloud.com/) | French only DC's 
-| [Scaleway](https://scaleway.com) | Europe 
-
-# Managed Hosting/WordPress Specific
-## Managed VPS
-## Managed Container Based
-### Multiple Locations
-
-| Company | Stack |  Description |
- --- | --- | --- |
-| [ServeBolt](https://servebolt.com) | Boltz? | Container based, need more information.
-
-### US
-| Company | Stack |  Description |
- --- | --- | --- |
-| [Convesio](https://convesio.com/) | Docker | Using Docker Imaging for scaling/self-healing/high-availability.
-
-## Shared Hosting
-### US
-Company | Description|
- --- | --- |
-[EasyWP](https://easywp.com)| Managed Shared Hosting by NameCheap, no idea on stack.
-[BitWP]https://bitwp.io/| Managed Shared hosting using DigitalOcean and GCP.
-
-## Unknown
-Company | Description|
- --- | --- |
-[Templ](https://templ.io/)| Managed Shared Hosting by NameCheap, no idea on stack.
-
-### Self Hosted
-### Cloud Based
-Company | Description|
- --- | --- |
-| [Cloudways](https://www.cloudways.com/en/pricing.php) | Provides a decent NGiNX/PHP-FPM/Varnish Stack, includes a caching plugin called Breeze.
-| [SpinupWP](https://spinupwp.com)| Control Panel that works with Digital Ocean and other VPS providers.
-| [GRIDPANE](https://gridpane.com/) | Control Panel that works with multiple providers.
-
-## Stacks
-This will detail the various stacked used by most providers.
-
 # Email
 Because hosting email on the same resources as your website is not ideal.
 ## Email Forwarding
@@ -146,6 +78,11 @@ Company | Cost | Storage | Description|
  [Zoho](https://www.zoho.com/mail/zohomail-pricing.html) | $1/m USD | 5GB | ?
  [Rack Space](https://www.rackspace.com/email-hosting) | $2.99/m USD | 25GB | ?
  [Migadu](https://www.migadu.com) | Free/$4 | Unlimited features always. 1GB/10 Outgoing emails for Free. 100 Outgoing emails for $4/m USD. | 1GB to Unlimited
+
+## Need to Add
+* MxRoute
+* Rackspace
+*
 
 # Domains
 Need to flesh this out. 
