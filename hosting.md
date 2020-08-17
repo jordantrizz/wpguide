@@ -163,6 +163,7 @@ Need to flesh this out.
 - https://www.presslabs.com/
 - https://sitedistrict.com/#highlights
 - https://nestify.io/
+- https://wordify.com/pricing/ - container, nginx
 
 # Testing Method
 The testing method should ensure the following is completed for each provider.
