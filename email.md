@@ -82,7 +82,8 @@ Company | Cost | Storage | Description|
 ## Need to Add
 * MxRoute
 * Rackspace
-*
+* forwardemail.net
+* ImprovMX
 
 # Domains
 Need to flesh this out. 
@@ -91,26 +92,3 @@ Need to flesh this out.
 - https://www.gandi.net/en/domain
 - https://www.hover.com/
 
-# Providers to Add
-- vipsdime.com - Decent, don't know. USD.
-- frantech
-- nosupportlinux
-- https://trulywp.com/plans/
-- https://backupsy.com/
-- https://www.presslabs.com/
-- https://sitedistrict.com/#highlights
-- https://nestify.io/
-
-# Testing Method
-The testing method should ensure the following is completed for each provider.
-
-1. CPU Performance
-2. Disk Performance
-3. PHP Function Performance (Important for WordPress)
-4. Memory Performance
-5. Network Latency and Throughout-put
-
-##  Suggestions
-- https://github.com/n-st/nench
-- Disk Tests Random IO ```fio --randrepeat=1 --ioengine=libaio --direct=1 --gtod_reduce=1 --name=test --filename=random_read_write.fio --bs=4k --iodepth=64 --size=4G --readwrite=randrw --rwmixread=75```
-- Need to update and include https://github.com/jordantrizz/ultimate-linux-tool-box/blob/master/php-cpu-test.php
