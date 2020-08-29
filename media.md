@@ -1,0 +1,1 @@
+*https://wordpress.org/plugins/wp-stateless/#utm_medium=referral&utm_source=facebook.com&utm_content=social
