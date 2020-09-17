@@ -2,6 +2,7 @@
 * Amazon SES
 * SendGrid
 * MailGun
+* https://www.zoho.com/transmail/
 
 # Plugins
 * Post SMTP Mailer/Email Log
