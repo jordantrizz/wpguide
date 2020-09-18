@@ -86,10 +86,13 @@ Company | Cost | Storage | Description|
 * ImprovMX
 https://www.pobox.com/
 
+# Email Clients
+* Boxy Suite
+* Shift
+
 # Domains
 Need to flesh this out. 
 
 ## Domains with Email
 - https://www.gandi.net/en/domain
 - https://www.hover.com/
-
