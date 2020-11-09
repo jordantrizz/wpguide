@@ -4,3 +4,7 @@
 
 # Blogs to Videos
 * Lumen5
+
+# Marketing
+# LinkedIn
+* meetalfred.com
