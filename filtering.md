@@ -1,0 +1,1 @@
+* https://pixify.net/products/smart-content-filter/
