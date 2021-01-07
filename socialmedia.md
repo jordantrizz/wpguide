@@ -1,2 +1,0 @@
-# Planning
-* https://planable.io/
